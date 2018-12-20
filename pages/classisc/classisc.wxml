@@ -1,0 +1,7 @@
+<!--pages/classisc/classisc.wxml-->
+
+<view class="container">
+<view class="header">
+    <epsoide-cmp></epsoide-cmp>
+</view>
+</view>
