@@ -1,1 +1,14 @@
 <!--components/epsoide/epsoide.wxml-->
+
+<view class="container">
+  {{message}}
+</view>
+<v-like></v-like> 
+<view wx:if="{{view=='WE'}}">WE</view>
+<view wx:elif="{{view=='WEp'}}">WEp</view>
+<view wx:else="{{view=='MINA'}}">MINA</view>
+
+<view bindtap="add">{{count}}</view>
+<view id="item-{{id}}">id</view>
+<checkbox checked='{{false}}'></checkbox>
+<view wx:for="{{[zero,1,2,3,4]}}">{{item}}</view>

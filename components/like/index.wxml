@@ -1,7 +1,9 @@
 <!--components/like/index.wxml-->
-<text>components/like/index.wxml</text>
-
-<image class="container"src="images/like2.png"></image>
+<!-- <text>components/like/index.wxml</text> -->
+<view  class="container" catchtap="onLike">
+<image src="images/like{{imgstatus}}.png"></image>
+<text>{{count>=1000? count1:count}}</text>
+</view>
 
 
 
