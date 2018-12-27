@@ -1,7 +1,9 @@
 <!--pages/classisc/classisc.wxml-->
 
 <view class="container">
+wwwwww{{message}}
 <view class="header">
+ <v-like like="{{classic}}" />
     <epsoide-cmp></epsoide-cmp>
 </view>
 </view>

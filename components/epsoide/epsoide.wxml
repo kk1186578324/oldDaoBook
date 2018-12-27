@@ -3,7 +3,6 @@
 <view class="container">
   {{message}}
 </view>
-<v-like></v-like> 
 <view wx:if="{{view=='WE'}}">WE</view>
 <view wx:elif="{{view=='WEp'}}">WEp</view>
 <view wx:else="{{view=='MINA'}}">MINA</view>

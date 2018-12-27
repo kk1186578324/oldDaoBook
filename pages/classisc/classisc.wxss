@@ -1,8 +1,0 @@
-/* pages/classisc/classisc.wxss */
-.container{
-  width: 100%;
-}
-.header{
-  height: 100rpx;
-  padding: 30rpx;
-}

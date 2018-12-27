@@ -5,7 +5,10 @@ Component({
    */
   properties: {
     like:{
-      type:Number
+      type:String
+    },
+    count:{
+      type: Number
     }
 
   },
