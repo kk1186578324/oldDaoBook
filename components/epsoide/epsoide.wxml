@@ -1,13 +1,21 @@
 <!--components/epsoide/epsoide.wxml-->
-
-<view class="container">
-  {{message}}
+<!-- <wxs module="m1">  
+var getIndex = function(index) {
+ var val = index<10?"0"+index:index;
+ return val;
+ }
+  module.exports.getIndex = getIndex
+  </wxs> -->
+<view class="epsoide-container">
+<view class="index-container">
+   <text class="No">No.</text>
+   <text class="index">{{_index}}</text>
+   <view class="line"></view>
+   </view>
+   <view class="date-container">
+   <text class="month">{{month}}</text>
+   <text class="year">{{year}}</text>
+   </view>
 </view>
-<view wx:if="{{view=='WE'}}">WE</view>
-<view wx:elif="{{view=='WEp'}}">WEp</view>
-<view wx:else="{{view=='MINA'}}">MINA</view>
 
-<view bindtap="add">{{count}}</view>
-<view id="item-{{id}}">id</view>
-<checkbox checked='{{false}}'></checkbox>
-<view wx:for="{{[zero,1,2,3,4]}}">{{item}}</view>
+

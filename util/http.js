@@ -14,13 +14,12 @@ class HTTP{
       data: params.data,
       header: {
         'content-type':'application/json',
-        'appkey':config.appkey
       },
       method: params.method,
       success: function (res) {
         let code = res.statusCode.toString();
         if(code.startsWith('2')){
-          params.success(res.data)
+          params.success&&params.success(res.data)
         }else{
           wx.showToast({
             title: '错误',

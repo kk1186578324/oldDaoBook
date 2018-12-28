@@ -2,14 +2,15 @@
 .container{
   display: inline-flex;
   flex-direction: row;
-  padding: 10px;
+  padding-top:10px;
+  width: 80rpx;
 }
 .container image{
   width:32rpx;
   height:28rpx; 
 }
 .container text{
- line-height: 10px;
+  line-height: 10px;
   font-size:24rpx;
   color: #bbb;
   position:relative;

@@ -1,0 +1,6 @@
+<!--components/nav/index.wxml-->
+<view class="nav-container">
+  <image class="prev" bindtap="prev" src="{{first?'images/prev_1.png':'images/prev.png'}}"></image>
+  <text>{{title}}</text>
+   <image  class="next" bindtap="next" src="{{last?'images/next.png':'images/next_1.png'}}"></image>
+</view>

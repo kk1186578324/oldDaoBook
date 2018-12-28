@@ -1,9 +1,14 @@
 <!--pages/classisc/classisc.wxml-->
 
 <view class="container">
-wwwwww{{message}}
 <view class="header">
- <v-like like="{{classic}}" />
-    <epsoide-cmp></epsoide-cmp>
+ <v-epsoide index="{{classic.index}}" />
+ <v-like  bindlike = "onLike" like="{{classic.like_status}}" count = "{{classic.fav_nums}}" />
+</view>
+<view class="banner">
+ <v-moive img = "{{bathUrl+classic.image1}}" content="{{classic.content}}"/>    
+</view>
+<view class='nav'>
+<v-nav title = "{{classic.title}}" total="{{}}" />
 </view>
 </view>

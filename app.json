@@ -4,6 +4,7 @@
     "pages/classisc/classisc",
     "pages/book/book",
     "pages/my/my",
+    "pages/index/index",
     "pages/logs/logs"
 
   ],

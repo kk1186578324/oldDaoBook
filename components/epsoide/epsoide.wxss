@@ -1,5 +1,37 @@
 /* components/epsoide/epsoide.wxss */
 
-.container{
-  
+.epsoide-container{
+  display: flex;
+  flex-direction: row;
+}
+
+.index-container .index{
+  font-weight:700px;
+  font-size:52rpx;
+}
+.index-container {
+  display: flex;
+  flex-direction:row;
+  align-items: baseline;
+
+}
+.index-container .line{
+   width: 2px;
+   height: 40rpx;
+   margin-left:5px;
+   background: rgb(95, 94, 94);
+}
+.date-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  top:5px;
+  margin-left:5px;
+}
+.date-container .month{
+  font-size:18rpx;
+}
+.date-container .year{
+    font-size:18rpx;
 }

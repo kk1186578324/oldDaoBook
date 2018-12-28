@@ -1,7 +1,9 @@
 {
   "component": true,
   "usingComponents": {
-    "epsoide-cmp": "/components/epsoide/epsoide",
-    "v-like":"/components/like/index"
+    "v-epsoide": "/components/epsoide/epsoide",
+    "v-like":"/components/like/index",
+    "v-moive":"/components/classic/moive/index",
+    "v-nav": "/components/nav/index"
   }
 }
