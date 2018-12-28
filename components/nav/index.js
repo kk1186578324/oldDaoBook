@@ -5,7 +5,8 @@ Component({
    */
   properties: {
     title:String,
-    total:Number
+    firstPage:Boolean,
+    lastPage: Boolean
   },
 
   /**
@@ -13,19 +14,25 @@ Component({
    */
 
   data: {
-    first:"",
-    next:""
-  },
-  attached(){
-    console.log(this.properties.total)
+  
   },
   ready(){
+
+
     console.log(this.properties.total)
+
+
   },
   /**
    * 组件的方法列表
    */
   methods: {
+
+    onPage(e){
+      console.log(e)
+      this.triggerEvent("page", e.target.dataset.name, {})
+
+    }
 
   }
 })

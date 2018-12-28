@@ -1,10 +1,10 @@
 import {HTTP} from '../util/http.js'
 class ClassicModel extends HTTP{
-  getLatest(sCallback, pageSize){
+  getLatest(sCallback, page,pageSize){
       this.request({
         url:'/periodical/list',
         method:'post',
-        data: {pageSize: pageSize},
+        data: { page, pageSize},
         success:(res)=>{
           sCallback(res)
         }

@@ -20,15 +20,19 @@ Page({
     },
     bathUrl:"http://localhost:3000/img/",
     pageSize:1,
-    total:""
+    total:"",
+    page:1,
+    firstPage:true,
+    lastPage:false
   },
   onLoad:function(options){
-    classic.getLatest((res)=>{
-        this.setData({
-          classic:res.content[0],
-          total:res.count
-        })
-    }, this.data.pageSize)
+    // let lastPage = false;
+    // lastPage = res.count <= 1 ? true : false;
+    // this.setData({
+    //   lastPage
+    // })
+
+    this.initData()
   },
 //自定义事件获取子组件的值
   onLike(event) {
@@ -37,13 +41,54 @@ Page({
     behavior.type = this.data.classic.type
     likeModel.like(behavior)
   },
+  //分页
+  onPage(e){
+    e.detail == "prev" ? this.setData({
+      page: this.data.page - 1,
+    }) : this.setData({
+      page: this.data.page + 1,
+    })
+    this.data.page == 1 ? this.setData({
+      firstPage: true
+    }) : null;
+    console.log(this.data.page, this.data.total)
+    this.data.page == this.data.total ? this.setData({
+      lastPage: true
+    }) : null;
+    if(this.data.page<1){
+      this.setData({
+        page:1,
+      })
+      return;
+    }
+
+    if (this.data.page> this.data.total){
+      this.setData({
+        page: this.data.total,
+        lastPage:true
+      })
+      return;
+    }
+
+    this.initData()
+  },
+  initData() {
+    classic.getLatest((res) => {
+
+      let lastPage=false;
+      // lastPage = res.count <= 1 ?true:false;
+      this.setData({
+        classic: res.content[0],
+        total: res.count,
+   
+      })
+     
+    }, this.data.page, this.data.pageSize)
+  }
+
+
   
 
-  /**
-   * 组件的方法列表
-   */
-  methods: {
+  
 
-
-  }
 })

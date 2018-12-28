@@ -1,6 +1,7 @@
 <!--components/nav/index.wxml-->
 <view class="nav-container">
-  <image class="prev" bindtap="prev" src="{{first?'images/prev_1.png':'images/prev.png'}}"></image>
+  <image class="prev" bindtap="onPage" data-name="prev" src="{{firstPage?'images/prev_1.png':'images/prev.png'}}"></image>
   <text>{{title}}</text>
-   <image  class="next" bindtap="next" src="{{last?'images/next.png':'images/next_1.png'}}"></image>
+  <text>{{firstPage}}{{lastPage}}</text>
+   <image  class="next" bindtap="onPage" data-name="next" src="{{lastPage?'images/next_1.png':'images/next.png'}}"></image>
 </view>
