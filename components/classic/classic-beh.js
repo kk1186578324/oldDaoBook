@@ -1,11 +1,12 @@
 // components/classic/moive/index.js
-import classicBeh from "../classic-beh.js"
-Component({
+let classicBeh = Behavior({
   /**
    * 组件的属性列表
    */
-  behaviors: { classicBeh},
   properties: {
+    img: String,
+    content: String,
+
   },
 
   /**
@@ -22,3 +23,4 @@ Component({
 
   }
 })
+export { classicBeh}

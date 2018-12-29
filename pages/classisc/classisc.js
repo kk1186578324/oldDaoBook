@@ -49,10 +49,12 @@ Page({
       page: this.data.page + 1,
     })
     this.data.page == 1 ? this.setData({
-      firstPage: true
+      firstPage: true,
+      lastPage: false
     }) : null;
     console.log(this.data.page, this.data.total)
     this.data.page == this.data.total ? this.setData({
+      firstPage: false,
       lastPage: true
     }) : null;
     if(this.data.page<1){
@@ -65,7 +67,6 @@ Page({
     if (this.data.page> this.data.total){
       this.setData({
         page: this.data.total,
-        lastPage:true
       })
       return;
     }
@@ -74,9 +75,7 @@ Page({
   },
   initData() {
     classic.getLatest((res) => {
-
       let lastPage=false;
-      // lastPage = res.count <= 1 ?true:false;
       this.setData({
         classic: res.content[0],
         total: res.count,

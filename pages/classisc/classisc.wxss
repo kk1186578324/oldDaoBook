@@ -1,12 +1,20 @@
-.container .header{
-  padding: 0 30rpx;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
 
-}
-.container .nav{
+.container{
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.container .header{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+v-epsoide{
+  margin-left:30rpx;
+}
+v-like{
+  margin-right: 30rpx;
 }

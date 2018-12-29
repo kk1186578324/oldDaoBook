@@ -9,9 +9,10 @@
    flex-direction: row;
    justify-content: space-between;
    align-items: center;
-   padding:20px;
+   padding:10px;
 }
 .prev,.next{
   width: 23rpx;
   height: 34rpx;
+  padding: 20rpx;
 }

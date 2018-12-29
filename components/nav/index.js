@@ -30,6 +30,8 @@ Component({
 
     onPage(e){
       console.log(e)
+      console.log(this.data.firstPage)
+      console.log(this.data.lastPage)
       this.triggerEvent("page", e.target.dataset.name, {})
 
     }

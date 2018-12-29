@@ -1,0 +1,24 @@
+/* components/classic/music/index.wxss */
+
+.classic-container{
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+
+}
+.classic-container .banner{
+   width: 100%;
+
+}
+
+.classic-container .tag{
+   width:46rpx;
+   height: 142rpx;
+   position: relative;
+   top:-30px;
+   left:-300rpx;
+}
+.classic-container .content{
+  font-size: 36rpx;
+  color: rgb(75, 72, 72)
+}
