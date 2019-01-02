@@ -3,7 +3,7 @@
 
 <view class="classic-container">
    <image class="banner" src="{{img}}"></image>
-   <image class="play"></image>
+   <image class="play" src="{{pauseSrc}}"></image>
    <image class="tag" src="images/music@tag.png"></image>
    <text class="content">{{content}}</text>
 </view>

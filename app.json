@@ -1,16 +1,16 @@
 {
   "pages":[
- 
     "pages/classisc/classisc",
-    "pages/book/book",
     "pages/my/my",
+    "pages/book/book",
+ 
     "pages/index/index",
     "pages/logs/logs"
 
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "black",
+    "navigationBarBackgroundColor": "white",
     "navigationBarTitleText": "oldDao",
     "navigationBarTextStyle":"black"
   },
@@ -20,7 +20,7 @@
           "borderStyle": "black",
           "list": [
         {
-              "selectedIconPath": "pages/image/tabbar/classichighlight.png",
+              "selectedIconPath":  "pages/image/tabbar/classichighlight.png",
               "iconPath": "pages/image/tabbar/classic.png",
                "pagePath": "pages/classisc/classisc",
               "text": "流行"  

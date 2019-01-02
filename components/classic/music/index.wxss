@@ -5,20 +5,30 @@
   flex-direction:column;
   align-items: center;
 
-}
-.classic-container .banner{
-   width: 100%;
 
+}
+
+
+.banner{
+  width:396rpx;
+  height:396rpx;
+  border-radius: 198rpx;
 }
 
 .classic-container .tag{
-   width:46rpx;
-   height: 142rpx;
+   width:44rpx;
+   height: 127rpx;
    position: relative;
-   top:-30px;
+   top:-90rpx;
    left:-300rpx;
 }
 .classic-container .content{
   font-size: 36rpx;
   color: rgb(75, 72, 72)
+}
+.play{
+  width: 120rpx;
+  height: 120rpx;
+  position: relative; 
+  bottom: 271rpx; 
 }

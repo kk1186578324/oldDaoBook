@@ -1,2 +1,35 @@
 <!--pages/my/my.wxml-->
-<text>pages/my/my.wxml</text>
+<!-- <text>pages/my/my.wxml</text> -->
+<view class='bg'>
+
+ <view class="header-container">
+  <view class='header-avarter'>
+  <image src="images/avartar.png"></image>
+  <text>Mine</text>
+ </view>
+ <view class='about'>
+ <view class='about-me'>
+ <image src="images/aboutme.png"></image>
+   <text>关于我们</text>
+ </view>
+  <view class='books-me'>
+   <text>17</text>
+   <text>我的书单</text>
+ </view>
+ </view>
+</view>
+ <view  class='title-header'> 
+ <text>精选</text>
+ </view>
+<view class='container'>
+ 
+  <view class="books-container" wx:for="{{array}}">
+    <view class='movie-like'>
+    <text class='movie-title'>电影</text>
+    <v-like/>
+    </view>
+    <image src='images/books.jpg'></image>
+    <text class='title'>爱你就像爱生命爱你就像爱生命爱你就像爱生命爱你就像爱生命</text>
+  </view>
+</view>
+</view>

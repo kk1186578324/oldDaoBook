@@ -1,0 +1,20 @@
+/* components/search/index.wxss */
+
+.search-container input{
+   text-align: center;
+   background: rgb(247, 247, 247);
+   margin: 0 auto;
+   width: 690rpx;
+   height: 70rpx;
+   border: 1px solid rgb(247, 247, 247);
+   border-radius: 35rpx;
+
+}
+.search-container image{
+  position: relative;
+  z-index: 999;
+  top:-55rpx;
+  left:240rpx;
+  width: 28rpx;
+  height: 28rpx;
+}

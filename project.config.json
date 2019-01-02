@@ -11,7 +11,7 @@
 		"newFeature": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "1.9.94",
+	"libVersion": "2.4.3",
 	"appid": "wx18939f7ccdd1676e",
 	"projectname": "oldDao",
 	"debugOptions": {

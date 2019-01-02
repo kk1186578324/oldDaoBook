@@ -1,2 +1,22 @@
 <!--pages/book/book.wxml-->
-<text>pages/book/book.wxml</text>
+<!-- <text>pages/book/book.wxml</text> -->
+
+<view class='header'>
+ <v-search/> 
+ <view  class='title-header'> 
+ <text>精选</text>
+ </view>
+
+ <view class="container">
+ 
+  <view class="books-container" wx:for="{{array}}">
+    <image src='images/books.jpg'></image>
+    <text class='title'>爱你就像爱生命</text>
+    <text class='author'>王小波</text>
+    <view class='like'>
+    <text class="like-text">233.喜欢</text>
+    <text class="like-content">68.短评</text>
+  </view>
+ </view>
+ </view>
+</view>

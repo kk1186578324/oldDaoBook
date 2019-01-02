@@ -18,7 +18,7 @@ Page({
     classic:{
       image:""
     },
-    bathUrl:"http://localhost:3000/img/",
+    bathUrl:"http://192.168.2.54:3000/img/",
     pageSize:1,
     total:"",
     page:1,

@@ -4,11 +4,10 @@
   display: flex;
   flex-direction:column;
   align-items: center;
-
 }
 .classic-container .banner{
+  height:500rpx;
    width: 100%;
-
 }
 
 .classic-container .tag{

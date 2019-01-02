@@ -3,10 +3,10 @@ let classicBeh = Behavior({
   /**
    * 组件的属性列表
    */
+  behaviors: [],
   properties: {
     img: String,
-    content: String,
-
+    content: String
   },
 
   /**

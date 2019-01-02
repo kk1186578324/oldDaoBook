@@ -5,9 +5,10 @@
  <v-epsoide index="{{classic.index}}" />
  <v-like  bindlike = "onLike" like="{{classic.like_status}}" count = "{{classic.fav_nums}}" />
 </view>
-<view class="banner">
- <!-- <v-moive img = "{{bathUrl+classic.image1}}" content="{{classic.content}}"/>     -->
- <v-music/>  
+ <view class="classisc-banner">
+ <v-moive wx:if="{{classic.type===100}}" img = "{{bathUrl+classic.image}}" content="{{classic.content}}"/>    
+ <v-music  wx:if="{{classic.type===200}}" img = "{{bathUrl+classic.image}}" content="{{classic.content}}" />  
+  <v-essay  wx:if="{{classic.type===300}}" img = "{{bathUrl+classic.image}}" content="{{classic.content}}"/>   
 </view>
 <v-nav title = "{{classic.title}}" firstPage="{{firstPage}}" lastPage="{{lastPage}}" bindpage = "onPage" />
 </view>
