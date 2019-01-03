@@ -1,5 +1,6 @@
 <!--pages/my/my.wxml-->
 <!-- <text>pages/my/my.wxml</text> -->
+
 <view class='bg'>
 
  <view class="header-container">
@@ -23,13 +24,28 @@
  </view>
 <view class='container'>
  
-  <view class="books-container" wx:for="{{array}}">
+  <view class="books-container" wx:for="{{classic}}">
     <view class='movie-like'>
-    <text class='movie-title'>电影</text>
-    <v-like/>
+    <wxs module = "movieName">
+     var getName = function(type){
+      switch(type){
+        case 100:
+         return "电影"
+         case 200:
+         return "音乐"
+         case 300:
+         return "诗句"
+         defult
+         return ""
+       }
+     }
+     module.exports.getName = getName
+    </wxs>
+    <text class='movie-title'>{{movieName.getName(item.type)}}</text>
+    <v-like bindlike = "onLike"  data-id="{{item.id}}" data-type="{{item.type}}" like="{{item.like_status}}" count = "{{item.fav_nums}}"/>
     </view>
-    <image src='images/books.jpg'></image>
-    <text class='title'>爱你就像爱生命爱你就像爱生命爱你就像爱生命爱你就像爱生命</text>
+    <image src="{{bathUrl+item.image}}"></image>
+    <text class='title'>{{item.content}}</text>
   </view>
 </view>
 </view>

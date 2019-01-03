@@ -3,11 +3,11 @@
 <view class="container">
 <view class="header">
  <v-epsoide index="{{classic.index}}" />
- <v-like  bindlike = "onLike" like="{{classic.like_status}}" count = "{{classic.fav_nums}}" />
+ <v-like  bindlike = "onLike" like="{{like.like_status}}" count = "{{like.fav_nums}}" />
 </view>
  <view class="classisc-banner">
  <v-moive wx:if="{{classic.type===100}}" img = "{{bathUrl+classic.image}}" content="{{classic.content}}"/>    
- <v-music  wx:if="{{classic.type===200}}" img = "{{bathUrl+classic.image}}" content="{{classic.content}}" />  
+ <v-music  wx:if="{{classic.type===200}}" img = "{{bathUrl+classic.image}}" content="{{classic.content}}" url="{{classic.url}}" />  
   <v-essay  wx:if="{{classic.type===300}}" img = "{{bathUrl+classic.image}}" content="{{classic.content}}"/>   
 </view>
 <v-nav title = "{{classic.title}}" firstPage="{{firstPage}}" lastPage="{{lastPage}}" bindpage = "onPage" />

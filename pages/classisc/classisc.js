@@ -18,12 +18,13 @@ Page({
     classic:{
       image:""
     },
+    like:{},
     bathUrl:"http://192.168.2.54:3000/img/",
     pageSize:1,
     total:"",
     page:1,
     firstPage:true,
-    lastPage:false
+    lastPage:false 
   },
   onLoad:function(options){
     // let lastPage = false;
@@ -48,15 +49,18 @@ Page({
     }) : this.setData({
       page: this.data.page + 1,
     })
-    this.data.page == 1 ? this.setData({
+    this.data.page <= 1 ? this.setData({
       firstPage: true,
       lastPage: false
-    }) : null;
-    console.log(this.data.page, this.data.total)
-    this.data.page == this.data.total ? this.setData({
+    }) : this.setData({
+        firstPage: false
+    });
+    this.data.page >= this.data.total ? this.setData({
       firstPage: false,
       lastPage: true
-    }) : null;
+    }) : this.setData({
+        lastPage: false
+    });
     if(this.data.page<1){
       this.setData({
         page:1,
@@ -73,21 +77,27 @@ Page({
 
     this.initData()
   },
+  //初始化列表数据
   initData() {
     classic.getLatest((res) => {
       let lastPage=false;
       this.setData({
         classic: res.content[0],
         total: res.count,
-   
       })
-     
+      var likeSend = {
+        art_id:res.content[0].id,
+        type: res.content[0].type
+      }
+      this.initLike(likeSend)
     }, this.data.page, this.data.pageSize)
+  },
+  //初始化喜欢
+  initLike(likeSend){
+    likeModel.likeList((res) => {
+      this.setData({
+        like: res.content,
+      })
+    }, likeSend)
   }
-
-
-  
-
-  
-
 })

@@ -39,3 +39,24 @@
   color: rgb(66, 66, 66);
   
 }
+.search-list{
+  width:690rpx;
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-around; */
+}
+.search-list image{
+  width: 80rpx;
+  height: 100rpx;
+}
+.search-content{
+  display: flex;
+  flex-direction: column;
+  margin-left:20rpx;
+  justify-content: center;
+  /* align-items: center; */
+}
+.search-content .author{
+  font-size: 24rpx;
+  color: gray;
+}

@@ -2,8 +2,8 @@
 <!-- <text>components/classic/music/index.wxml</text> -->
 
 <view class="classic-container">
-   <image class="banner" src="{{img}}"></image>
-   <image class="play" src="{{pauseSrc}}"></image>
+   <image class="banner {{playStatus?'rotation':''}} " src="{{img}}" animation="{{animationData}}"></image>
+   <image class="play" src="{{playStatus?playingSrc:pauseSrc}}" bindtap='isPlay'></image>
    <image class="tag" src="images/music@tag.png"></image>
    <text class="content">{{content}}</text>
 </view>

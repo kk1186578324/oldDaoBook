@@ -1,5 +1,8 @@
 // pages/book/book.js
-Component({
+
+import { BooksModel } from '../../models/books'
+var booksModel = new BooksModel();
+Page({
   /**
    * 组件的属性列表
    */
@@ -11,8 +14,27 @@ Component({
    * 组件的初始数据
    */
   data: {
-    array:[1,2,3,4]
+    bathUrl: "http://192.168.2.54:3000/img/",
+    page:1,
+    pageSize:1000,
+    books:[]
 
+
+  },
+  onLoad(){
+    this.initData()
+  },
+  //初始化列表数据
+  initData() {
+    booksModel.getBooks((res) => {
+      let lastPage = false;
+      this.setData({
+        books: res.content,
+        total: res.count
+
+      })
+
+    }, this.data.page, this.data.pageSize)
   },
 
   /**

@@ -1,9 +1,12 @@
 {
   "pages":[
+    "pages/book/book",
     "pages/classisc/classisc",
     "pages/my/my",
-    "pages/book/book",
- 
+   
+   
+   
+
     "pages/index/index",
     "pages/logs/logs"
 

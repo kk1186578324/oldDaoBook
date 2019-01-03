@@ -8,6 +8,26 @@ class LikeModel extends HTTP {
     })
 
   }
+  likeList(sCallback, behavior) {
+    this.request({
+      url: "/like/list",
+      method: 'post',
+      data: behavior,
+      success:(res)=>{
+      if(res.success){
+        sCallback(res)
+      }else{
+        wx.showToast({
+          title: res.msg,
+          icon: "none",
+          duration: 2000
+        })
+      }
+  
+      }
+    })
+
+  }
 }
 
 export { LikeModel } 
