@@ -1,7 +1,8 @@
 {
   "component": true,
   "usingComponents": {
-     "v-search":"/components/search/index"
-
+     "v-search":"/components/search/index",
+     "v-books": "/components/books/index",
+      "v-searchList": "/components/searchList/index"
   }
 }

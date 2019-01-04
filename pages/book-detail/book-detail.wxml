@@ -1,0 +1,56 @@
+<!--pages/book-detail/book-detail.wxml-->
+<!-- <text>pages/book-detail/book-detail.wxml</text> -->
+
+<view class="container">
+    <view class='line'></view>
+   <view class='header'>
+   <image src="images/books.jpg"></image>
+   <text class='title'>爱你就像爱生命</text>
+   <text class='author'>王小波</text>
+   </view>
+    <view class='line'></view>
+   <view class='short-comment'>
+    <text class="title">短评</text>
+    <view class='content'>
+      <text>你好啊!王小波</text>
+          <text>你好啊!王小波</text>
+              <text>你好啊!王小波</text>
+                  <text>你好啊!王小波</text>
+    </view>
+   </view>
+ <view class='line'></view>
+   <view class='content-validity'>
+    <text class="title">内容简介</text>
+    <view class='content'>
+      <text>你好啊!王小波你好啊!王小波你好啊!王小波你好啊!王小波你好啊!王小波你好啊!王小波你好啊!王小波你好啊!王小波</text>
+    </view>
+   </view>
+    <view class='line'></view>
+   <view class='book-message'>
+    <text class="title">书本信息</text>
+    <view class='content'>
+     <view class='content-left'>
+        <text>出版社</text>
+        <text>出版时间</text>
+        <text>价格</text>
+        <text>评分</text>
+     </view>
+       <view class='content-right'>
+        <text>出版社</text>
+        <text>出版时间</text>
+        <text>价格</text>
+        <text>评分</text>
+     </view>
+    </view>
+   </view>
+   <view class='footer'>
+   <input type="text" placeholder='留下你的短评~'></input>
+   <v-like/> 
+
+
+   </view>
+
+</view>
+
+
+

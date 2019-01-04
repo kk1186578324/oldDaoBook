@@ -1,5 +1,16 @@
 /* components/search/index.wxss */
-
+.search-container{
+  position: fixed;
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  top:0;
+  /* justify-content: center; */
+    width:100%;
+  /* top:0;
+  width: 690rpx;
+  margin:0 auto; */
+}
 .search-container input{
    text-align: center;
    background: rgb(247, 247, 247);
@@ -13,8 +24,8 @@
 .search-container image{
   position: relative;
   z-index: 999;
-  top:-55rpx;
-  left:240rpx;
+  top:-50rpx;
+  left:-120rpx;
   width: 28rpx;
   height: 28rpx;
 }

@@ -1,0 +1,10 @@
+<!--components/searchList/index.wxml-->
+<!-- <text>components/searchList/index.wxml</text> -->
+<view class="search-list">
+   <image src="images/books.jpg"></image>
+   <view class="search-content">
+     <text class='title'>爱你就像爱生命</text>
+     <text class='author'>王小波</text>
+   </view>
+</view>
+

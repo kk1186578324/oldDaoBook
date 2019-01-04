@@ -3,7 +3,6 @@
 <view class='search-container'>
 
 <input type="text" placeholder="搜索图书名称">
-
 </input>
 <image src="images/search.png"></image>
 </view>

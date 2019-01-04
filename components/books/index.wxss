@@ -1,0 +1,33 @@
+/* components/books/index.wxss */
+.container{
+  width:690rpx;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap:wrap;
+   justify-content: space-around;
+}
+.books-container{
+  width: 240rpx;
+  height: 360rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30rpx;
+  box-shadow: darkgrey 1rpx 1rpx 10rpx 1rpx 
+}
+.books-container .title{
+  margin-top:10rpx;
+  font-size:28rpx; 
+}
+.books-container .author,.like-text,.like-content{
+  font-size:24rpx; 
+  color: rgb(138, 138, 138)
+}
+.like-content{
+  margin-left:10rpx;
+}
+.books-container image{
+  width:240rpx;
+  height:224rpx;
+}

@@ -1,28 +1,8 @@
 <!--pages/book/book.wxml-->
 <!-- <text>pages/book/book.wxml</text> -->
-
-<view class='header'>
  <v-search/> 
- <view  class='title-header'> 
- <text>精选</text>
- </view>
-
- <view class="container">
-  <view class="books-container" wx:for="{{books}}">
-    <image src="{{bathUrl+item.image}}"></image>
-    <text class='title'>{{item.title}}</text>
-    <text class='author'>{{item.author}}</text>
-    <view class='like'>
-    <text class="like-text">{{item.fav_nums}}.喜欢</text>
-    <text class="like-content">68.短评</text>
-  </view>
- </view>
-   <view class="search-list">
-   <image src="images/books.jpg"></image>
-   <view class="search-content">
-     <text class='title'>爱你就像爱生命</text>
-     <text class='author'>王小波</text>
-   </view>
-   </view>
- </view>
+<view  class='title-header'> 
+  <text>精选</text>
 </view>
+ <v-books books = "{{books}}" />
+<v-searchList/>

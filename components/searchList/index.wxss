@@ -1,0 +1,22 @@
+/* components/searchList/index.wxss */
+.search-list{
+  width:690rpx;
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  padding: 20rpx;
+}
+.search-list image{
+  width: 80rpx;
+  height: 100rpx;
+}
+.search-content{
+  display: flex;
+  flex-direction: column;
+  margin-left:20rpx;
+  justify-content: center;
+}
+.search-content .author{
+  font-size: 24rpx;
+  color: gray;
+}

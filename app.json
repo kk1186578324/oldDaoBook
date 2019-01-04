@@ -1,12 +1,9 @@
 {
   "pages":[
+    "pages/book-detail/book-detail",
     "pages/book/book",
-    "pages/classisc/classisc",
     "pages/my/my",
-   
-   
-   
-
+    "pages/classisc/classisc",
     "pages/index/index",
     "pages/logs/logs"
 
@@ -26,7 +23,7 @@
               "selectedIconPath":  "pages/image/tabbar/classichighlight.png",
               "iconPath": "pages/image/tabbar/classic.png",
                "pagePath": "pages/classisc/classisc",
-              "text": "流行"  
+               "text": "流行"  
         },
         {
              "selectedIconPath": "pages/image/tabbar/bookhighlight.png",
