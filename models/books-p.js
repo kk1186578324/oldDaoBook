@@ -7,6 +7,12 @@ class BooksModelP extends HTTP {
       method: 'post'
     })
   }
+  booksDetail(books_id){
+    return this.request({
+      url: '/books/detail/' + books_id,
+      method:'get'
+    })
+  }
 }
 
 export { BooksModelP } 

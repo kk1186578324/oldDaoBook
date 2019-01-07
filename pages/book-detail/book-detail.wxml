@@ -4,25 +4,26 @@
 <view class="container">
     <view class='line'></view>
    <view class='header'>
-   <image src="images/books.jpg"></image>
-   <text class='title'>爱你就像爱生命</text>
-   <text class='author'>王小波</text>
+   <image src="images/books1.jpg"></image>
+   <text class='title'>{{books.title}}</text>
+   <text class='author'>{{books.author}}</text>
    </view>
     <view class='line'></view>
    <view class='short-comment'>
     <text class="title">短评</text>
     <view class='content'>
-      <text>你好啊!王小波</text>
-          <text>你好啊!王小波</text>
-              <text>你好啊!王小波</text>
-                  <text>你好啊!王小波</text>
+    <block  wx:for="{{books.comment}}" wx:key="{{index}}"> 
+    <v-tag  tagData="{{item.content}}" tag-class="tag">
+    <text  class="give" slot="after">1</text>
+    </v-tag>
+    </block>
     </view>
    </view>
  <view class='line'></view>
    <view class='content-validity'>
     <text class="title">内容简介</text>
     <view class='content'>
-      <text>你好啊!王小波你好啊!王小波你好啊!王小波你好啊!王小波你好啊!王小波你好啊!王小波你好啊!王小波你好啊!王小波</text>
+      <text>{{books.validity}}</text>
     </view>
    </view>
     <view class='line'></view>
@@ -36,17 +37,30 @@
         <text>评分</text>
      </view>
        <view class='content-right'>
-        <text>出版社</text>
-        <text>出版时间</text>
-        <text>价格</text>
-        <text>评分</text>
+        <text>理想国出版</text>
+        <text>{{books.pubdate}}</text>
+        <text>{{books.price}}</text>
+        <text>{{books.score}}</text>
      </view>
     </view>
    </view>
-   <view class='footer'>
-   <input type="text" placeholder='留下你的短评~'></input>
+   <view class='footer-container'>
+   <view class="content">
+   <text class='title'>点击短评+1</text>
+   <view class="tag">
+     <block  wx:for="{{books.comment}}" wx:key="{{index}}"> 
+    <v-tag  tagData="{{item.content}}" tag-class="tag">
+    <text  class="give" slot="after">1</text>
+    </v-tag>
+    </block>
+      <input bindfocus ="initInput"  type="text"></input>
+      </view>
+   </view>
+   <view class='footer' hidden='true'>
+   <input bindfocus ="initInput"  type="text" placeholder='留下你的短评~'></input>
    <v-like/> 
-
+   <image class="share" src="images/share.png"></image>
+   </view>
 
    </view>
 

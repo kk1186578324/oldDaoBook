@@ -37,22 +37,22 @@
   flex-direction: column;
   align-items: center;
 }
-
-.short-comment .content{
+ .short-comment .content{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  
-
+  margin-top:20rpx;
+  padding-bottom: 20rpx;
 }
-.short-comment .content text{
-  margin: 10rpx;
-  color: gray;
-  font-size:24rpx;
+.content .give{
+ margin-left:10rpx;
+ 
+}
+.tag{
+  margin-left:10rpx;
   padding:10rpx 20rpx;
   background: rgb(247, 247, 247);
-  border-radius: 40rpx;
-
+  margin-bottom: 20rpx;
 }
 .content-validity .content{
   padding-bottom: 40rpx;
@@ -107,21 +107,59 @@
 .book-message .content .content-left{
    align-items:flex-end;
 }
-.footer{
-  width: 690rpx;
-  margin: 0 auto;
+.footer-container{
+  width: 100%;
   position: fixed;
+  background: white;
   z-index: 999;
   bottom: 0;
+}
+.footer-container .content{
+  width: 690rpx;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding-bottom: 20rpx;
+
+}
+.footer-container .content .title{
+ font-size:24rpx;
+
+}
+.footer-container .tag{
+   display: flex;
+   flex-direction:row;
+
+}
+
+.footer{
+  width: 100%;
+  margin: 0 auto;
+
   background: white;
-  left:40rpx;
+  /* left:40rpx; */
   padding-bottom:20rpx;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
+  align-items: center;
+}
+.footer .share{
+  width: 28rpx;
+  height: 28rpx;
 }
 .footer input{
-     text-align: center;
+   text-align: center;
+   background: rgb(247, 247, 247);
+   width: 408rpx;
+   height: 70rpx;
+   border: 1px solid rgb(207, 207, 207);
+   border-radius: 35rpx;
+}
+
+.footer-container .content input{
+   text-align: center;
    background: rgb(247, 247, 247);
    width: 408rpx;
    height: 70rpx;
