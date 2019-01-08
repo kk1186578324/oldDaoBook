@@ -13,6 +13,20 @@ class BooksModelP extends HTTP {
       method:'get'
     })
   }
+  booksComment(book_id,content) {
+    return this.request({
+      url: '/comment/add',
+      data: { book_id, content},
+      method: 'post'
+    })
+  }
+  booksSearch(bookName) {
+    return this.request({
+      url: '/books/search',
+      data: {bookName},
+      method: 'post'
+    })
+  }
 }
 
 export { BooksModelP } 

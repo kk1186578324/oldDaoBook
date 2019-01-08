@@ -1,10 +1,9 @@
-// components/searchList/index.js
+// components/mask/index.js
 Component({
   /**
    * 组件的属性列表
    */
   properties: {
-    searchData:Object
 
   },
 
@@ -12,8 +11,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-    bathUrl: "http://192.168.2.54:3000/img1/",
-  
+
   },
 
   /**

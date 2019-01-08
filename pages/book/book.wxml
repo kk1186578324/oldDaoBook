@@ -1,8 +1,15 @@
 <!--pages/book/book.wxml-->
 <!-- <text>pages/book/book.wxml</text> -->
- <v-search/> 
+
+<v-search wx:if="{{isSearch}}" bindcancel = "onCancel" />
+<view class='books-container' wx:if="{{!isSearch}}">
+<view class='search-container'>
+<input type="text" bindfocus='initSearch' placeholder="搜索图书名称">
+</input>
+<image src="images/search.png"></image>
+</view>
 <view  class='title-header'> 
   <text>精选</text>
 </view>
  <v-books books = "{{books}}" />
-<v-searchList/>
+ </view>

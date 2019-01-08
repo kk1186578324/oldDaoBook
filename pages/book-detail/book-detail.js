@@ -17,29 +17,73 @@ Page({
    * 组件的初始数据
    */
   data: {
-    content: ["王小波", "王小波2", "王小波3", "王小波", "王小波2", "王小波3"],
-    books:{}
+    books:{},
+    comments:[],
+    isWrite:false
   },
 
   onLoad(opt){
     var bid = opt.bid;
+    wx.showLoading({
+      title: '加载中',
 
+    })
     const booksList = booksModelP.booksDetail(2);
     booksList.then(res => {
       this.setData({
         books: res.content,
-        // content: res.content
+        comments: res.content.comment,
       })
+      wx.hideLoading()
+    });
+ /*  Promise.all([booksList]).then(res=>{
 
+     console.log(res)
+   })*/
+
+  },
+
+  initConfirm(e){
+    const comment = e.detail.value;
+    const book_id = this.data.books.id;
+    const obj = {
+      content:comment
+    }
+    var books = this.data.books
+      books.comment.unshift(obj)
+    this.setData({
+      books,
+    })
+
+    const booksResult = booksModelP.booksComment(book_id, comment);
+    booksResult.then(res => {
+        this.setData({
+          isWrite: false
+        })
+        wx.showToast({
+          title: '已评论',
+          icon: 'success',
+          duration: 2000
+        })
     });
 
-    console.log(opt)
-  },
+    console.log(this.data.books.comment)
 
-  initInput(e){
-   console.log(e)
   },
+//点击输入框
+  initWrite() {
+    this.setData({
+      isWrite:true
+    })
+  },
+//离开输入框
+  blurInput(e){
 
+      this.setData({
+          isWrite: false
+      })
+
+  },
   /**
    * 组件的方法列表
    */

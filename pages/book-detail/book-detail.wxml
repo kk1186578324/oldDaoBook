@@ -12,7 +12,7 @@
    <view class='short-comment'>
     <text class="title">短评</text>
     <view class='content'>
-    <block  wx:for="{{books.comment}}" wx:key="{{index}}"> 
+    <block  wx:for="{{util.limit(comments,3)}}" wx:key="{{index}}"> 
     <v-tag  tagData="{{item.content}}" tag-class="tag">
     <text  class="give" slot="after">1</text>
     </v-tag>
@@ -45,26 +45,36 @@
     </view>
    </view>
    <view class='footer-container'>
-   <view class="content">
-   <text class='title'>点击短评+1</text>
-   <view class="tag">
-     <block  wx:for="{{books.comment}}" wx:key="{{index}}"> 
-    <v-tag  tagData="{{item.content}}" tag-class="tag">
-    <text  class="give" slot="after">1</text>
-    </v-tag>
-    </block>
-      <input bindfocus ="initInput"  type="text"></input>
-      </view>
-   </view>
-   <view class='footer' hidden='true'>
-   <input bindfocus ="initInput"  type="text" placeholder='留下你的短评~'></input>
-   <v-like/> 
-   <image class="share" src="images/share.png"></image>
+    <view class="content" wx:if="{{isWrite}}">
+      <text class='title'>点击短评+1</text>
+      <view class="tag-wrap" >
+        <block  wx:for="{{util.limit(comments,3)}}" wx:key="{{index}}"> 
+          <v-tag  tagData="{{item.content}}">
+          <text  class="give" slot="after">1</text>
+          </v-tag>
+        </block>
+        <input bindblur='blurInput' focus="{{isWrite}}" bindconfirm='initConfirm'  type="text"/>
+      </view> 
+    </view>
+   <view class='footer'  wx:if="{{!isWrite}}">
+    <view class="fake" bindtap='initWrite'>请输入短评~</view>
+    <v-like/> 
+    <image class="share" src="images/share.png"></image>
    </view>
 
    </view>
 
 </view>
 
+<!-- 遮罩层 -->
+<v-mask  wx:if="{{isWrite}}" bindtap="blurInput"/>
 
 
+<wxs module="util">
+  var limit = function(array, length) {
+    return array.slice(0, length)
+  }
+  module.exports = {
+    limit: limit
+  }
+</wxs>

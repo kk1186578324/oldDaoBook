@@ -1,8 +1,38 @@
 <!--components/search/index.wxml-->
 <!-- <text>components/search/index.wxml</text> -->
-<view class='search-container'>
 
-<input type="text" placeholder="搜索图书名称">
-</input>
-<image src="images/search.png"></image>
+<view class='container'>
+<view class='search-container'>
+<image class="search" src="images/search.png"></image>
+<input  cursor = "10"  bindconfirm='initSearch' placeholder-class='in-bar' auto-focus="true" placeholder="搜索图书名称" value="{{inputData}}"/>
+<image class="del" bindtap='initDel' src="images/del.png"></image>
+<view class='onCancel' bindtap='onCancel'>取消</view>
+</view>
+
+<view class="search-tag" wx:if="{{!isSearch}}">
+  <view class='search-history border-bar'>历史搜索</view>
+    <view class='history-content'>
+      <block  wx:for="{{content}}" wx:key="{{index}}"> 
+              <v-tag  tagData="{{item}}">
+              </v-tag>
+      </block>
+    </view>
+
+  <view class='search-hot border-bar'>热门搜索</view>
+    <view class='history-content'>
+      <block  wx:for="{{content}}" wx:key="{{index}}"> 
+              <v-tag  tagData="{{item}}">
+              </v-tag>
+      </block>
+    </view>
+</view>
+
+ <view class='search-content' wx:if="{{isSearch}}">
+ <block wx:for="{{searchResult}}"  wx:key="{{index}}">
+  <v-searchList searchData="{{item}}"/>
+ </block>
+ </view>
+
+
+
 </view>

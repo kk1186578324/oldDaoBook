@@ -1,6 +1,7 @@
 {
   "component": true,
   "usingComponents": {
-    
+    "v-tag": "/components/tags/index",
+    "v-searchList": "/components/searchList/index"
   }
 }

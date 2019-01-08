@@ -6,3 +6,9 @@
   border-radius: 40rpx;
 
 } 
+.container.tag{
+  margin-left:10rpx;
+  padding:10rpx 20rpx;
+  background: rgb(247, 247, 247);
+  margin-bottom: 20rpx;
+}

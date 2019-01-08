@@ -1,7 +1,7 @@
 <!--components/tags/index.wxml-->
 <!-- <text>components/tags/index.wxml</text> -->
 
-    <view class='container tag-class'>
+    <view class='container tag'>
     <text class="name">{{tagData}}</text>
     <slot name="after"></slot>
     </view>
