@@ -1,7 +1,7 @@
 <!--components/tags/index.wxml-->
 <!-- <text>components/tags/index.wxml</text> -->
 
-    <view class='container tag'>
+    <view class='container tag' bindtap='onSearch'>
     <text class="name">{{tagData}}</text>
     <slot name="after"></slot>
     </view>

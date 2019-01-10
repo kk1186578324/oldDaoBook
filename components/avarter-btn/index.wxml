@@ -1,0 +1,6 @@
+<!--components/avarter-btn/index.wxml-->
+<!-- <text>components/avarter-btn/index.wxml</text> -->
+
+   <button open-type="{{openType}}"  bindgetuserinfo="onGetUserInfo"  class="avarter"  wx:if="{{!isLogin}}">
+    <slot name="img"/>
+   </button> 

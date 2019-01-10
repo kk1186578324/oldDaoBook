@@ -59,7 +59,9 @@
    <view class='footer'  wx:if="{{!isWrite}}">
     <view class="fake" bindtap='initWrite'>请输入短评~</view>
     <v-like/> 
-    <image class="share" src="images/share.png"></image>
+   <v-button bind:getuserinfo="onGetUserInfo" open-type='share'>
+   <image class='share-img' slot="img" src="/image/share/share.png"></image>
+ </v-button>
    </view>
 
    </view>

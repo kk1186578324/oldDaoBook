@@ -5,8 +5,16 @@
 
  <view class="header-container">
   <view class='header-avarter'>
-  <image src="images/avartar.png"></image>
-  <text>Mine</text>
+
+   <button open-type="getUserInfo"  bindgetuserinfo="bindGetUserInfo"  class="avarter"  wx:if="{{!isLogin}}">
+   <text>点我</text>
+   <text>登录</text>
+   </button> 
+   <view wx:if="{{isLogin}}" class='userInfo'>
+
+  <image src="{{userInfo.avatarUrl}}" class="avarter"></image>
+  <text>{{userInfo.nickName}}</text>
+  </view>
  </view>
  <view class='about'>
  <view class='about-me'>
@@ -20,11 +28,12 @@
  </view>
 </view>
  <view  class='title-header'> 
+
  <text>精选</text>
  </view>
 <view class='container'>
  
-  <view class="books-container" wx:for="{{classic}}">
+  <view class="books-container" wx:for="{{classic}}" wx:key="{{key}}">
     <view class='movie-like'>
     <wxs module = "movieName">
      var getName = function(type){
@@ -42,9 +51,9 @@
      module.exports.getName = getName
     </wxs>
     <text class='movie-title'>{{movieName.getName(item.type)}}</text>
-    <v-like bindlike = "onLike"  data-id="{{item.id}}" data-type="{{item.type}}" like="{{item.like_status}}" count = "{{item.fav_nums}}"/>
+    <v-like bindlike = "onLike"  data-id="{{item.id}}" readonly="{{true}}"  data-type="{{item.type}}" like="{{item.like_status}}" count = "{{item.fav_nums}}"/>
     </view>
-    <image src="{{bathUrl+item.image}}"></image>
+    <image class="{{item.type==200?'music':null}}" src="{{bathUrl+item.image}}"></image>
     <text class='title'>{{item.content}}</text>
   </view>
 </view>

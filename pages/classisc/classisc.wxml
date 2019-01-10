@@ -3,8 +3,14 @@
 <view class="container">
 <view class="header">
  <v-epsoide index="{{classic.index}}" />
+ <view class="like-share">
  <v-like  bindlike = "onLike" like="{{like.like_status}}" count = "{{like.fav_nums}}" />
+ <v-button bind:getuserinfo="onGetUserInfo" open-type='share'>
+ <image class='share-img' slot="img" src="/image/share/share.png"></image>
+ </v-button>
+ </view>
 </view>
+
  <view class="classisc-banner">
  <v-moive wx:if="{{classic.type===100}}" img = "{{bathUrl+classic.image}}" content="{{classic.content}}"/>    
  <v-music  wx:if="{{classic.type===200}}" img = "{{bathUrl+classic.image}}" content="{{classic.content}}" url="{{classic.url}}" />  

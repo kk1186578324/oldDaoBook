@@ -28,7 +28,7 @@ Page({
       title: '加载中',
 
     })
-    const booksList = booksModelP.booksDetail(2);
+    const booksList = booksModelP.booksDetail(bid);
     booksList.then(res => {
       this.setData({
         books: res.content,
@@ -36,11 +36,6 @@ Page({
       })
       wx.hideLoading()
     });
- /*  Promise.all([booksList]).then(res=>{
-
-     console.log(res)
-   })*/
-
   },
 
   initConfirm(e){

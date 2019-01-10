@@ -1,16 +1,17 @@
-// components/tags/index.js
+// components/avarter-btn/index.js
 Component({
   /**
    * 组件的属性列表
    */
-  options: {
+  options:{
     multipleSlots: true // 在组件定义时的选项中启用多slot支持
   },
+
   properties: {
-    tagData:String
+    openType:String
 
   },
-  externalClasses:["tag-class"],
+
   /**
    * 组件的初始数据
    */
@@ -23,13 +24,10 @@ Component({
    */
   methods: {
 
-    onSearch(e){
-
-      const value = e._relatedInfo.anchorTargetText;
-
-      this.triggerEvent("search", { value}, {})
-      console.log(e._relatedInfo.anchorTargetText)
-
+    onGetUserInfo(e){
+      
+     
+      this.triggerEvent('getuserinfo',e.detail,{})
     }
 
   }

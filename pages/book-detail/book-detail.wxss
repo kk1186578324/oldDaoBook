@@ -163,3 +163,7 @@
    border: 1px solid rgb(207, 207, 207);
    border-radius: 35rpx;
 }
+ .share-img{
+  width: 28rpx;
+  height: 28rpx;
+}

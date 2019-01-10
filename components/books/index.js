@@ -12,7 +12,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-    bathUrl: "http://192.168.2.54:3000/img1/"
+    bathUrl: "http://192.168.2.51:3000/img/"
 
   },
 

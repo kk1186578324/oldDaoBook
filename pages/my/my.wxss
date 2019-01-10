@@ -22,9 +22,22 @@
   align-items: center;
   margin-top:250rpx;
 }
-.header-avarter image{
+.header-avarter .userInfo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.header-avarter .avarter{
   width: 120rpx;
   height: 120rpx;
+  overflow: hidden;
+  border-radius: 50%;
+  font-size:24rpx;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  border:none!important; 
+  padding: 0!important;
 }
 .about-me{
   display: flex;
@@ -102,4 +115,11 @@
 }
 .header-avarter{
   display: flex;
+}
+
+.books-container .music{
+  width:240rpx;
+  height:240rpx;
+  border-radius: 120rpx;
+
 }

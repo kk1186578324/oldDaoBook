@@ -1,9 +1,12 @@
 
-class keyWordModel{
+class KeyWordModel{
+  constructor(){
+    const maxLength = 10;
+  }
 
-  const  maxLength = 10;
   getHistory(){
-    const result = wx.getStorage("history")
+    const result = wx.getStorageSync("history")
+    console.log(result)
     if(!result){
       return []
     }
@@ -11,11 +14,19 @@ class keyWordModel{
   }
 
   addHistory(value){
-   
-  
+   const result = this.getHistory();
+    if (result.length >= this.maxLength){
+     result.pop();
+   }
+    if (result.includes(value)){
+      return
+    }
+
+    result.unshift(value);
+    console.log(result)
    wx.setStorage({
      key: 'history',
-     data: value,
+     data: result
    })
 
   }
@@ -25,3 +36,5 @@ class keyWordModel{
 
 
 }
+
+export { KeyWordModel}

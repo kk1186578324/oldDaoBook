@@ -1,0 +1,10 @@
+/* components/avarter-btn/index.wxss */
+
+.avarter{
+  background: white;
+  padding: 0!important;
+  margin-top:12rpx;
+}
+button::after{
+  border: none!important;
+}

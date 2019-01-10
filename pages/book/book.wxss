@@ -3,25 +3,27 @@
   position: fixed;
   display: flex;
   flex-direction:column;
+  background: white;
   align-items: center;
   top:0;
   width:100%;
 
 }
-.search-container input{
+.search-container text{
    text-align: center;
    background: rgb(247, 247, 247);
+   color: gray;
    margin: 0 auto;
    width: 690rpx;
    height: 70rpx;
-   border: 1px solid rgb(247, 247, 247);
+   line-height: 70rpx;
    border-radius: 35rpx;
 
 }
 .search-container image{
   position: relative;
   z-index: 999;
-  top:-50rpx;
+  top:54rpx;
   left:-120rpx;
   width: 28rpx;
   height: 28rpx;

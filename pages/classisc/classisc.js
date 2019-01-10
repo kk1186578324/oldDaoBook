@@ -19,7 +19,7 @@ Page({
       image:""
     },
     like:{},
-    bathUrl:"http://192.168.2.54:3000/img/",
+    bathUrl:"http://192.168.2.51:3000/img/",
     pageSize:1,
     total:"",
     page:1,
@@ -33,6 +33,13 @@ Page({
     //   lastPage
     // })
 
+
+
+
+
+
+
+
     this.initData()
   },
 //自定义事件获取子组件的值
@@ -41,6 +48,11 @@ Page({
     behavior.art_id = this.data.classic.id
     behavior.type = this.data.classic.type
     likeModel.like(behavior)
+  },
+  onGetUserInfo(e){
+
+    console.log(e)
+
   },
   //分页
   onPage(e){

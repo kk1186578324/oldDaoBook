@@ -12,16 +12,16 @@
 <view class="search-tag" wx:if="{{!isSearch}}">
   <view class='search-history border-bar'>历史搜索</view>
     <view class='history-content'>
-      <block  wx:for="{{content}}" wx:key="{{index}}"> 
-              <v-tag  tagData="{{item}}">
+      <block  wx:for="{{hisData}}" wx:key="{{index}}"> 
+              <v-tag  tagData="{{item}}" bind:search="initSearch">
               </v-tag>
       </block>
     </view>
 
   <view class='search-hot border-bar'>热门搜索</view>
     <view class='history-content'>
-      <block  wx:for="{{content}}" wx:key="{{index}}"> 
-              <v-tag  tagData="{{item}}">
+      <block  wx:for="{{hotData}}" wx:key="{{index}}"> 
+              <v-tag  tagData="{{item}}" bind:search="initSearch">
               </v-tag>
       </block>
     </view>

@@ -1,7 +1,9 @@
 // components/search/index.js
 
 import { BooksModelP} from "../../models/books-p";
+import { KeyWordModel } from '../../models/keyWord'
 let booksModelP = new BooksModelP()
+let keyWordModel = new KeyWordModel();
 Component({
   /**
    * 组件的属性列表
@@ -14,10 +16,19 @@ Component({
    * 组件的初始数据
    */
   data: {
-    content:[1,2,3,4,5],
+    hisData:[],
     searchResult:[],
     isSearch: false,
     inputData:""
+
+  },
+  attached(){
+    const result = keyWordModel.getHistory()
+
+    this.setData({
+      hisData:result
+    })
+    console.log(result)
 
   },
 
@@ -29,14 +40,15 @@ Component({
 
     initSearch(e){
       console.log(e)
-      let result = booksModelP.booksSearch(e.detail.value);
+      const searchData = e.detail.value;
+      let result = booksModelP.booksSearch(searchData);
      result.then((res)=>{
           if(res.success&&res.content.length){
             this.setData({
               searchResult:res.content,
               isSearch:true
-
             })
+            keyWordModel.addHistory(searchData)
           }else{
             wx.showToast({
               title: '未找到相关图书',

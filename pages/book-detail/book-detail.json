@@ -3,7 +3,7 @@
   "usingComponents": {
       "v-like": "/components/like/index",
       "v-tag":"/components/tags/index",
-      "v-mask":"/components/mask/index"
-    
+      "v-mask":"/components/mask/index",
+      "v-button": "/components/avarter-btn/index"
   }
 }

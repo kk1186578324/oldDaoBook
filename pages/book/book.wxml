@@ -4,9 +4,8 @@
 <v-search wx:if="{{isSearch}}" bindcancel = "onCancel" />
 <view class='books-container' wx:if="{{!isSearch}}">
 <view class='search-container'>
-<input type="text" bindfocus='initSearch' placeholder="搜索图书名称">
-</input>
 <image src="images/search.png"></image>
+<text  bindtap='initSearch'> 搜索图书名称</text>
 </view>
 <view  class='title-header'> 
   <text>精选</text>
