@@ -4,7 +4,8 @@
 <view class="header">
  <v-epsoide index="{{classic.index}}" />
  <view class="like-share">
- <v-like  bindlike = "onLike" like="{{like.like_status}}" count = "{{like.fav_nums}}" />
+
+ <v-like wx:if="{{isStatus}}" likeData = "{{likeData}}" />
  <v-button bind:getuserinfo="onGetUserInfo" open-type='share'>
  <image class='share-img' slot="img" src="/image/share/share.png"></image>
  </v-button>

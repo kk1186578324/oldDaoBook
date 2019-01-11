@@ -2,6 +2,8 @@
 
 
 import { BooksModelP } from '../../models/books-p'
+import { LikeModel } from '../../models/like-p'
+var likeModel = new LikeModel();
 
 let booksModelP = new BooksModelP();
 Page({
@@ -18,8 +20,10 @@ Page({
    */
   data: {
     books:{},
+    likeData:{},
     comments:[],
-    isWrite:false
+    isWrite:false,
+    isStatus:false
   },
 
   onLoad(opt){
@@ -33,6 +37,14 @@ Page({
       this.setData({
         books: res.content,
         comments: res.content.comment,
+      })
+      var likeData = {
+        art_id: res.content.id
+      }
+      console.log(likeData)
+      this.setData({
+        likeData,
+        isStatus: true
       })
       wx.hideLoading()
     });

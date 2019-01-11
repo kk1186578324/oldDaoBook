@@ -1,6 +1,6 @@
 // pages/my/my.js
-import { ClassicModel } from '../../models/classic'
-import { LikeModel } from '../../models/like'
+import { ClassicModel } from '../../models/classic-p'
+import { LikeModel } from '../../models/like-p'
 import {UserModel } from '../../models/userLogin'
 var likeModel = new LikeModel();
 var classicModel = new ClassicModel();
@@ -38,6 +38,7 @@ Page({
                  userInfo:res.userInfo,
                  isLogin: true
                })
+               this.initLogin()
                this.initData()
           
              }
@@ -48,9 +49,10 @@ Page({
  
    },
   initData(){
-    classicModel.getLatest((res)=>{
+
+    classicModel.getLatest().then((res) => {
       this.setData({
-         classic:res.content
+        classic: res.content
       })
     })
 
@@ -77,12 +79,14 @@ Page({
   //初始化登录状态
   initLogin(){
     wx.login({
-      success(res) {
+      success:(res)=> {
         if (res.code) {
 
           console.log(res)
           const result = userModel.userLogin(res.code, this.data.userInfo);
-          console.log(result)
+          result.then(res=>{
+            wx.setStorageSync("token", res.openid)
+          })
           // 发起网络请求
           // wx.request({
           //   url: 'https://test.com/onLogin',

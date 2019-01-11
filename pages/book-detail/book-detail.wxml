@@ -58,7 +58,7 @@
     </view>
    <view class='footer'  wx:if="{{!isWrite}}">
     <view class="fake" bindtap='initWrite'>请输入短评~</view>
-    <v-like/> 
+ <v-like wx:if="{{isStatus}}" likeData = "{{likeData}}" />
    <v-button bind:getuserinfo="onGetUserInfo" open-type='share'>
    <image class='share-img' slot="img" src="/image/share/share.png"></image>
  </v-button>

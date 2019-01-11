@@ -1,6 +1,6 @@
 // pages/classisc/classisc.js
-import { ClassicModel} from '../../models/classic'
-import { LikeModel } from '../../models/like'
+import { ClassicModel} from '../../models/classic-p'
+import { LikeModel } from '../../models/like-p'
 var classic = new ClassicModel();
 var likeModel = new LikeModel();
 Page({
@@ -19,6 +19,8 @@ Page({
       image:""
     },
     like:{},
+    likeData:{},
+    isStatus:false,
     bathUrl:"http://192.168.2.51:3000/img/",
     pageSize:1,
     total:"",
@@ -27,32 +29,7 @@ Page({
     lastPage:false 
   },
   onLoad:function(options){
-    // let lastPage = false;
-    // lastPage = res.count <= 1 ? true : false;
-    // this.setData({
-    //   lastPage
-    // })
-
-
-
-
-
-
-
-
     this.initData()
-  },
-//自定义事件获取子组件的值
-  onLike(event) {
-    var behavior = event.detail
-    behavior.art_id = this.data.classic.id
-    behavior.type = this.data.classic.type
-    likeModel.like(behavior)
-  },
-  onGetUserInfo(e){
-
-    console.log(e)
-
   },
   //分页
   onPage(e){
@@ -91,25 +68,22 @@ Page({
   },
   //初始化列表数据
   initData() {
-    classic.getLatest((res) => {
-      let lastPage=false;
+    const result = classic.getLatest(this.data.page, this.data.pageSize)
+    result.then(res=>{
+      let lastPage = false;
       this.setData({
         classic: res.content[0],
-        total: res.count,
+        total: res.count
       })
-      var likeSend = {
-        art_id:res.content[0].id,
+      var likeData = {
+        art_id: res.content[0].id,
         type: res.content[0].type
       }
-      this.initLike(likeSend)
-    }, this.data.page, this.data.pageSize)
-  },
-  //初始化喜欢
-  initLike(likeSend){
-    likeModel.likeList((res) => {
       this.setData({
-        like: res.content,
+        likeData,
+        isStatus:true
       })
-    }, likeSend)
+    })
   }
+
 })

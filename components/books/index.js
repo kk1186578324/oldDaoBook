@@ -26,7 +26,6 @@ Component({
       console.log(e)
       wx.navigateTo({
           url:`/pages/book-detail/book-detail?bid=${bid}`
-
       })
     }
 

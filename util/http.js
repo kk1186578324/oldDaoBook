@@ -4,8 +4,30 @@ const tips = {
     1005:"xxxx"
 
 }
+
+
 class HTTP{
+
   request(params){
+
+    const token = wx.getStorageSync("token")
+    console.log(token)
+    if (!token) {
+      wx.showModal({
+        title: '提示',
+        content: '请先授权登录12',
+        success(res) {
+          if (res.confirm) {
+            wx.switchTab({
+              url: '/pages/my/my'
+            })
+          } else if (res.cancel) {
+
+          }
+        }
+      })
+      return
+    }
     if(!params.method){
       params.method = "get"
     }
@@ -14,12 +36,14 @@ class HTTP{
       data: params.data,
       header: {
         'content-type':'application/json',
+        'Authorization': token
       },
       method: params.method,
       success: function (res) {
         let code = res.statusCode.toString();
+        console.log(res)
         if(code.startsWith('2')){
-          params.success&&params.success(res.data)
+          params.success && params.success(res.data)
         }else{
           wx.showToast({
             title: '错误',
@@ -42,7 +66,6 @@ class HTTP{
       icon: 'none',
       duration: 2000
     })
-
 
   }
 
