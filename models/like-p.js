@@ -16,6 +16,12 @@ class LikeModel extends HTTP {
     })
 
   }
+  likeAllList() {
+    return this.request({
+      url: "/like/allList",
+      method: 'post'
+    })
+  }
 
   likeBook(behavior) {
     return this.request({

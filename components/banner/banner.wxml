@@ -1,0 +1,16 @@
+    <view class="banner">
+        <swiper
+                indicator-dots="{{indicatorDots}}"
+                autoplay="{{autoplay}}"
+                interval="{{interval}}"
+                duration="{{duration}}"
+        >
+            <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+                <swiper-item>
+                    <div class="img-wrap">
+                    <image src="{{base_url+item}}" class="slide-image"/>
+                    </div>
+                </swiper-item>
+            </block>
+        </swiper>
+    </view>

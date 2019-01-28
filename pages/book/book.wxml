@@ -1,14 +1,38 @@
 <!--pages/book/book.wxml-->
 <!-- <text>pages/book/book.wxml</text> -->
 
-<v-search wx:if="{{isSearch}}" bindcancel = "onCancel" />
-<view class='books-container' wx:if="{{!isSearch}}">
+<!-- <v-search wx:if="{{isSearch}}" bindcancel = "onCancel" /> -->
+
+
+<view class='container'>
 <view class='search-container'>
-<image src="images/search.png"></image>
-<text  bindtap='initSearch'> 搜索图书名称</text>
+<image class="search" src="images/search.png"></image>
+<input  cursor = "10"  bindconfirm='initSearch' placeholder-class='in-bar' auto-focus="true" placeholder="搜索图书名称" value="{{inputData}}"/>
+<image class="del" catchtap='initDel' src="images/del.png"></image>
+<view class='onCancel' bindtap='onCancel'>取消</view>
 </view>
-<view  class='title-header'> 
-  <text>精选</text>
+<view class="search-tag" wx:if="{{isSearch}}">
+  <view class='search-history border-bar'>历史搜索</view>
+    <view class='history-content'>
+      <block  wx:for="{{hisData}}" wx:key="{{index}}"> 
+              <v-tag  tagData="{{item}}" bind:search="initSearch"  tag-class="tag">
+              </v-tag>
+      </block>
+    </view>
+  <view class='search-hot border-bar'>热门搜索</view>
+    <view class='history-content'>
+      <block  wx:for="{{hotData}}" wx:key="{{index}}"> 
+              <v-tag  tagData="{{item}}" bind:search="initSearch">
+              </v-tag>
+      </block>
+    </view>
 </view>
+
+ <view class='search-content' wx:if="{{!isSearch}}">
+ <view>搜索结果</view>
  <v-books books = "{{books}}" />
  </view>
+</view>
+
+
+

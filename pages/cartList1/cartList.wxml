@@ -1,0 +1,52 @@
+<view class='contanier'>
+<view class="cart-wrap">
+  <block wx:for="{{carts}}" wx:key="{{index}}" >
+  <!-- <v-orderlist cart="{{item}}" index="{{index}}" data-index="{{index}}" allPrice = "{{allPrice}}" 
+  bindallPrice="getAllPrice" binddelData="delData" allChecked="{{allChecked}}" bindtouchstart="touchstart" bindtouchmove="touchmove"/> -->
+
+
+
+<view class="touch-item {{cart.isTouchMove ? 'touch-move-active' : ''}}" bindtouchmove="touchmove" bindtouchstart="touchstart"  binddelData="delData"  data-index="{{index}}" >
+  <view class='content' bindtap='showDetail' data-index="{{index}}">
+    <view class='column'>
+      <view class='row full_width'>
+        <view class='order-wrap'>
+          <view class='image-wrap'>
+            <checkbox checked="{{checked}}" data-checked="{{checked}}"  bindtap="checkboxChange" ></checkbox>
+            <!-- <checkbox-group bindchange="checkboxChange">
+            <label class="checkbox" wx:for="{{items}}">
+              <checkbox value="{{item.name}}" checked="{{item.checked}}" />
+              {{item.value}}
+            </label>
+          </checkbox-group> -->
+            <image class='img' src='one1.png'></image>
+            <view class='desc'>
+              <text>{{cart.title}}</text>
+              <text class='price'>{{"价格：¥"+cart.price}}</text>
+            </view>
+          </view>
+          <view class='add'>
+            <text bindtap='reduce'>-</text>
+            <text class='num'>{{count}}</text>
+            <text bindtap='add'>+</text>
+          </view>
+        </view>
+      </view>
+
+    </view>
+  </view>
+    <view class="del" catchtap="del"   data-index="{{index}}">删除</view>
+</view>
+
+
+  </block>
+  </view>
+  <view class="footer">
+  <view class='check-all'>
+  <checkbox bindtap='allCheck' checked='{{allChecked}}' ></checkbox>
+  <text>全选</text>
+  </view>
+  <view>合计：{{allPrice}}</view>
+  <view class="all">去结算</view>
+  </view>
+</view>

@@ -1,44 +1,52 @@
 {
-  "pages":[
-      "pages/classisc/classisc",
-        "pages/book/book",
+  "pages": [
+      "pages/place/index",
+    "pages/book-index/index",
+    "pages/cartList/cartList",
     "pages/book-detail/book-detail",
-
-    "pages/my/my",
-  
+    "pages/cartList1/cartList",
+    "pages/classisc/classisc",
     "pages/index/index",
-    "pages/logs/logs"
-
+    "pages/book/book",
+    "pages/my/my",
+    "pages/logs/logs",
+    "pages/search-index/index"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "white",
     "navigationBarTitleText": "oldDao",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   },
-    "tabBar": {
-          "color": "#a9b7b7",
-          "selectedColor": "black",
-          "borderStyle": "black",
-          "list": [
-        {
-              "selectedIconPath":  "/image/tabbar/classichighlight.png",
-              "iconPath": "/image/tabbar/classic.png",
-               "pagePath": "pages/classisc/classisc",
-               "text": "流行"  
-        },
-        {
-             "selectedIconPath": "/image/tabbar/bookhighlight.png",
-              "iconPath": "/image/tabbar/book.png",
-              "pagePath": "pages/book/book",
-              "text": "书单"  
-        },
-        {
-                "selectedIconPath": "/image/tabbar/myhighlight.png",
-                "iconPath": "/image/tabbar/my.png",
-                "pagePath": "pages/my/my",
-                "text": "喜欢"  
-        }
-      ]  
-    }
+  "tabBar": {
+    "color": "#a9b7b7",
+    "selectedColor": "black",
+    "borderStyle": "black",
+    "list": [
+      {
+        "selectedIconPath": "/image/tabbar/classichighlight.png",
+        "iconPath": "/image/tabbar/classic.png",
+        "pagePath": "pages/book-index/index",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "/image/tabbar/classichighlight.png",
+        "iconPath": "/image/tabbar/classic.png",
+        "pagePath": "pages/classisc/classisc",
+        "text": "流行"
+      },
+      {
+        "selectedIconPath": "/image/tabbar/myhighlight.png",
+        "iconPath": "/image/tabbar/my.png",
+        "pagePath": "pages/my/my",
+        "text": "喜欢"
+      },
+      {
+        "selectedIconPath": "/image/tabbar/myhighlight.png",
+        "iconPath": "/image/tabbar/my.png",
+        "pagePath": "pages/cartList/cartList",
+        "text": "购物车"
+      }
+    ]
+  }
 }

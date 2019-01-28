@@ -1,0 +1,88 @@
+/* pages/book-index/index.wxss */
+@import "../../weui.wxss";
+.index-container{
+  width: 690rpx;
+  margin: 0 auto;
+}
+.search-container{
+  position: fixed;
+  display: flex;
+  flex-direction:column;
+  z-index: 999;
+  background: white;
+  align-items: center;
+  top:0;
+
+}
+.search-container text{
+   text-align: center;
+   background: rgb(247, 247, 247);
+   color: gray;
+   margin: 0 auto;
+   width: 690rpx;
+   height: 70rpx;
+   line-height: 70rpx;
+   border-radius: 35rpx;
+
+}
+.search-container image{
+  position: relative;
+  z-index: 999;
+  top:54rpx;
+  left:-120rpx;
+  width: 28rpx;
+  height: 28rpx;
+}
+.banner-container{
+  margin-top:120rpx;
+}
+.list-container{
+  border: none;
+}
+.listcontainer{
+  width: 690rpx;
+  margin: 0 auto;
+  margin-top:10rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.listcontainer .v1{
+  font-weight:700;
+
+}
+.listcontainer .v2{
+ font-size:24rpx;
+ line-height: 40rpx;
+ border: 1px solid #ccc;
+ padding: 0 20rpx;
+ border-radius: 15px;
+
+}
+.tag-wrap{
+  margin-top:20rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.tag{
+  width: 120rpx;
+  text-align: center;
+  margin-left:10rpx;
+  padding:10rpx 20rpx;
+  background: rgb(247, 247, 247);
+  margin-bottom: 20rpx;
+}
+.loading {
+  margin: 50rpx 0 50rpx 0;
+}
+
+.loading-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+.loading-wrap{
+  width:50rpx;
+  margin: 0 auto;
+}

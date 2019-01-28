@@ -23,7 +23,6 @@
 .search-container image{
   position: relative;
   z-index: 999;
-  top:54rpx;
   left:-120rpx;
   width: 28rpx;
   height: 28rpx;
@@ -36,4 +35,73 @@
 .title-header text{
   color: rgb(66, 66, 66);
   
+}
+.container{
+  width: 690rpx;
+  margin: 0 auto;
+}
+.search-container{
+  position: fixed;
+  display: flex;
+  flex-direction:row;
+  align-items: center;
+  top:0;
+}
+.search-container input{
+   text-align: center;
+   background: rgb(247, 247, 247);
+   /* margin: 0 auto; */
+   width:400rpx;
+   height: 70rpx;
+   padding-left:60rpx;
+   padding-right:60rpx;
+   border: 1px solid rgb(247, 247, 247);
+   border-radius: 35rpx;
+}
+.search-container .search{
+  position: relative;
+  z-index: 999;
+  left: 50rpx;
+  width: 28rpx;
+  height: 28rpx;
+}
+.search-container .del{
+  position: relative;
+  z-index: 999;
+  left:-80rpx;
+  width: 28rpx;
+  height: 28rpx;
+  padding:30rpx;
+}
+.in-bar{
+  text-align: left;
+}
+.onCancel{
+  margin-left: -40rpx;
+  padding: 5rpx 0;
+
+}
+.search-tag{
+  margin-top:120rpx;
+
+}
+.border-bar{
+  padding-left:20rpx;
+  border-left: 10rpx solid black;
+  margin-bottom:20rpx;
+}
+.history-content{
+  display: flex;
+  flex-direction: row;
+}
+.search-content{
+  margin-top: 120rpx;
+}
+.tag{
+  width: 120rpx;
+  text-align: center;
+  margin-left:10rpx;
+  padding:10rpx 20rpx;
+  background: rgb(247, 247, 247);
+  margin-bottom: 20rpx;
 }

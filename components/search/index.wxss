@@ -9,16 +9,15 @@
   flex-direction:row;
   align-items: center;
   top:0;
-  width:100%;
-
 }
 .search-container input{
    text-align: center;
    background: rgb(247, 247, 247);
    /* margin: 0 auto; */
-   width:480rpx;
+   width:400rpx;
    height: 70rpx;
    padding-left:60rpx;
+   padding-right:60rpx;
    border: 1px solid rgb(247, 247, 247);
    border-radius: 35rpx;
 }
@@ -32,15 +31,17 @@
 .search-container .del{
   position: relative;
   z-index: 999;
-  left:-40rpx;
+  left:-80rpx;
   width: 28rpx;
   height: 28rpx;
+  padding:30rpx;
 }
 .in-bar{
   text-align: left;
 }
 .onCancel{
-  padding: 5rpx 10rpx;
+  margin-left: -40rpx;
+  padding: 5rpx 0;
 
 }
 .search-tag{

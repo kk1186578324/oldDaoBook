@@ -1,4 +1,5 @@
 // components/books/index.js
+import { config } from '../../config.js'
 Component({
   /**
    * 组件的属性列表
@@ -12,7 +13,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-    bathUrl: "http://192.168.2.51:3000/img/"
+    bathUrl: config.img_url
 
   },
 

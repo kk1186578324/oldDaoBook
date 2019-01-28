@@ -5,7 +5,10 @@
 <view class='search-container'>
 <image class="search" src="images/search.png"></image>
 <input  cursor = "10"  bindconfirm='initSearch' placeholder-class='in-bar' auto-focus="true" placeholder="搜索图书名称" value="{{inputData}}"/>
-<image class="del" bindtap='initDel' src="images/del.png"></image>
+
+<image class="del" catchtap='initDel' src="images/del.png"></image>
+
+
 <view class='onCancel' bindtap='onCancel'>取消</view>
 </view>
 
@@ -32,7 +35,4 @@
   <v-searchList searchData="{{item}}"/>
  </block>
  </view>
-
-
-
 </view>

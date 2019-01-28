@@ -28,4 +28,4 @@ class ClassicModel extends HTTP{
   }
 }
 
-export { ClassicModel} 
+export default ClassicModel;

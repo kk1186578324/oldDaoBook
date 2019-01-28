@@ -1,7 +1,8 @@
 // pages/classisc/classisc.js
 import { ClassicModel} from '../../models/classic-p'
 import { LikeModel } from '../../models/like-p'
-var classic = new ClassicModel();
+import { config } from '../../config.js'
+var classicModel = new ClassicModel();
 var likeModel = new LikeModel();
 Page({
   /**
@@ -19,18 +20,47 @@ Page({
       image:""
     },
     like:{},
-    likeData:{},
-    isStatus:false,
-    bathUrl:"http://192.168.2.51:3000/img/",
+    bathUrl: config.img_url,
     pageSize:1,
     total:"",
     page:1,
     firstPage:true,
     lastPage:false 
   },
-  onLoad:function(options){
+  onShow: function () {
+    console.log(123)
     this.initData()
   },
+  // onLoad:function(options){
+  //   this.initData()
+  // },
+
+  //自定义事件获取子组件的值
+  onLike(event) {
+    var behavior = event.detail
+    behavior.art_id = this.data.classic.id
+    behavior.type = this.data.classic.type
+    let result;
+    result = likeModel.like(behavior)
+    let like = Object.assign({}, this.data.like) ;
+
+    result.then(res => {
+      if (res.success) {
+        if (!like.like_status) {
+          like.like_status = 1;
+          like.fav_nums++
+        } else {
+          like.like_status = 0
+          like.fav_nums--
+        }
+        this.setData({
+          like
+        })
+      }
+    })
+
+  },
+
   //分页
   onPage(e){
     e.detail == "prev" ? this.setData({
@@ -68,20 +98,26 @@ Page({
   },
   //初始化列表数据
   initData() {
-    const result = classic.getLatest(this.data.page, this.data.pageSize)
+    const result = classicModel.getLatest(this.data.page, this.data.pageSize)
     result.then(res=>{
       let lastPage = false;
       this.setData({
         classic: res.content[0],
         total: res.count
       })
-      var likeData = {
+      var likeSend = {
         art_id: res.content[0].id,
         type: res.content[0].type
       }
+      this.initLike(likeSend)
+    })
+  },
+    //初始化喜欢
+  initLike(likeSend) {
+    const result = likeModel.likeList(likeSend)
+    result.then((res) => {
       this.setData({
-        likeData,
-        isStatus:true
+        like: res.content
       })
     })
   }

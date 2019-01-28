@@ -1,1 +1,7 @@
-{}
+
+{
+  "component": true,
+  "usingComponents": {
+    "v-search":"/components/searchbar/searchbar"
+  }
+}

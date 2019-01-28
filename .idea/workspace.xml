@@ -2,36 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="daeb674f-26db-41a2-827d-04437016654e" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/app.json" afterPath="$PROJECT_DIR$/app.json" />
       <change beforePath="$PROJECT_DIR$/components/books/index.js" afterPath="$PROJECT_DIR$/components/books/index.js" />
-      <change beforePath="$PROJECT_DIR$/components/search/index.js" afterPath="$PROJECT_DIR$/components/search/index.js" />
+      <change beforePath="$PROJECT_DIR$/components/like/index.js" afterPath="$PROJECT_DIR$/components/like/index.js" />
+      <change beforePath="$PROJECT_DIR$/components/like/index.wxml" afterPath="$PROJECT_DIR$/components/like/index.wxml" />
       <change beforePath="$PROJECT_DIR$/components/search/index.wxml" afterPath="$PROJECT_DIR$/components/search/index.wxml" />
+      <change beforePath="$PROJECT_DIR$/components/search/index.wxss" afterPath="$PROJECT_DIR$/components/search/index.wxss" />
       <change beforePath="$PROJECT_DIR$/components/searchList/index.js" afterPath="$PROJECT_DIR$/components/searchList/index.js" />
-      <change beforePath="$PROJECT_DIR$/components/tags/index.js" afterPath="$PROJECT_DIR$/components/tags/index.js" />
-      <change beforePath="$PROJECT_DIR$/components/tags/index.wxml" afterPath="$PROJECT_DIR$/components/tags/index.wxml" />
+      <change beforePath="$PROJECT_DIR$/components/searchList/index.wxml" afterPath="$PROJECT_DIR$/components/searchList/index.wxml" />
       <change beforePath="$PROJECT_DIR$/config.js" afterPath="$PROJECT_DIR$/config.js" />
-      <change beforePath="$PROJECT_DIR$/models/keyWord.js" afterPath="$PROJECT_DIR$/models/keyWord.js" />
+      <change beforePath="$PROJECT_DIR$/models/books-p.js" afterPath="$PROJECT_DIR$/models/books-p.js" />
+      <change beforePath="$PROJECT_DIR$/models/classic.js" afterPath="$PROJECT_DIR$/models/classic.js" />
+      <change beforePath="$PROJECT_DIR$/models/like-p.js" afterPath="$PROJECT_DIR$/models/like-p.js" />
       <change beforePath="$PROJECT_DIR$/pages/book-detail/book-detail.js" afterPath="$PROJECT_DIR$/pages/book-detail/book-detail.js" />
-      <change beforePath="$PROJECT_DIR$/pages/book-detail/book-detail.json" afterPath="$PROJECT_DIR$/pages/book-detail/book-detail.json" />
       <change beforePath="$PROJECT_DIR$/pages/book-detail/book-detail.wxml" afterPath="$PROJECT_DIR$/pages/book-detail/book-detail.wxml" />
       <change beforePath="$PROJECT_DIR$/pages/book-detail/book-detail.wxss" afterPath="$PROJECT_DIR$/pages/book-detail/book-detail.wxss" />
       <change beforePath="$PROJECT_DIR$/pages/book/book.js" afterPath="$PROJECT_DIR$/pages/book/book.js" />
-      <change beforePath="$PROJECT_DIR$/pages/book/book.wxml" afterPath="$PROJECT_DIR$/pages/book/book.wxml" />
-      <change beforePath="$PROJECT_DIR$/pages/book/book.wxss" afterPath="$PROJECT_DIR$/pages/book/book.wxss" />
       <change beforePath="$PROJECT_DIR$/pages/classisc/classisc.js" afterPath="$PROJECT_DIR$/pages/classisc/classisc.js" />
-      <change beforePath="$PROJECT_DIR$/pages/classisc/classisc.json" afterPath="$PROJECT_DIR$/pages/classisc/classisc.json" />
       <change beforePath="$PROJECT_DIR$/pages/classisc/classisc.wxml" afterPath="$PROJECT_DIR$/pages/classisc/classisc.wxml" />
-      <change beforePath="$PROJECT_DIR$/pages/classisc/classisc.wxss" afterPath="$PROJECT_DIR$/pages/classisc/classisc.wxss" />
-      <change beforePath="$PROJECT_DIR$/pages/image/tabbar/book.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/pages/image/tabbar/bookhighlight.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/pages/image/tabbar/classic.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/pages/image/tabbar/classichighlight.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/pages/image/tabbar/my.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/pages/image/tabbar/myhighlight.png" afterPath="" />
       <change beforePath="$PROJECT_DIR$/pages/my/my.js" afterPath="$PROJECT_DIR$/pages/my/my.js" />
       <change beforePath="$PROJECT_DIR$/pages/my/my.wxml" afterPath="$PROJECT_DIR$/pages/my/my.wxml" />
-      <change beforePath="$PROJECT_DIR$/pages/my/my.wxss" afterPath="$PROJECT_DIR$/pages/my/my.wxss" />
-      <change beforePath="$PROJECT_DIR$/project.config.json" afterPath="$PROJECT_DIR$/project.config.json" />
+      <change beforePath="$PROJECT_DIR$/readme.txt" afterPath="$PROJECT_DIR$/readme.txt" />
+      <change beforePath="$PROJECT_DIR$/util/http-p.js" afterPath="$PROJECT_DIR$/util/http-p.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -48,10 +39,10 @@
       <file leaf-file-name="classisc.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/classisc/classisc.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="7" column="12" lean-forward="false" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+            <state relative-caret-position="154">
+              <caret line="8" column="12" lean-forward="false" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
               <folding>
-                <element signature="e#30#80#0" expanded="true" />
+                <marker date="1547458159649" expanded="true" signature="37:79" ph="..." />
               </folding>
             </state>
           </provider>
@@ -70,8 +61,8 @@
       <file leaf-file-name="book-detail.wxml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/book-detail/book-detail.wxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1650">
-              <caret line="77" column="3" lean-forward="false" selection-start-line="77" selection-start-column="3" selection-end-line="77" selection-end-column="3" />
+            <state relative-caret-position="1694">
+              <caret line="81" column="3" lean-forward="false" selection-start-line="81" selection-start-column="3" selection-end-line="81" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -93,7 +84,7 @@
             <state relative-caret-position="704">
               <caret line="47" column="8" lean-forward="false" selection-start-line="47" selection-start-column="8" selection-end-line="47" selection-end-column="8" />
               <folding>
-                <marker date="1547005439098" expanded="true" signature="800:804" ph="{...}" />
+                <marker date="1547437462703" expanded="true" signature="823:827" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -102,9 +93,11 @@
       <file leaf-file-name="book-detail.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/book-detail/book-detail.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="484">
-              <caret line="37" column="7" lean-forward="false" selection-start-line="37" selection-start-column="7" selection-end-line="37" selection-end-column="7" />
-              <folding />
+            <state relative-caret-position="990">
+              <caret line="45" column="7" lean-forward="false" selection-start-line="45" selection-start-column="7" selection-end-line="45" selection-end-column="7" />
+              <folding>
+                <marker date="1547600264713" expanded="true" signature="2321:2325" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -164,6 +157,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -209,13 +203,12 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../vue/Vue-oldbook-manage" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -252,11 +245,12 @@
       <updated>1546870889320</updated>
       <workItem from="1546870891675" duration="1492000" />
       <workItem from="1546933316645" duration="1531000" />
+      <workItem from="1547703493418" duration="151000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3023000" />
+    <option name="totallyTimeSpent" value="3174000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
@@ -266,12 +260,12 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -297,7 +291,61 @@
         <state relative-caret-position="132">
           <caret line="7" column="12" lean-forward="false" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
           <folding>
-            <element signature="e#30#80#0" expanded="true" />
+            <marker date="1547458159649" expanded="true" signature="37:79" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/classic.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="18" column="5" lean-forward="false" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/book-detail/book-detail.wxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1694">
+          <caret line="77" column="3" lean-forward="false" selection-start-line="77" selection-start-column="3" selection-end-line="77" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/book/book.wxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/book-detail/book-detail.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="814">
+          <caret line="37" column="7" lean-forward="false" selection-start-line="37" selection-start-column="7" selection-end-line="37" selection-end-column="7" />
+          <folding>
+            <marker date="1547600264713" expanded="true" signature="2321:2325" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/book/book.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1034">
+          <caret line="47" column="8" lean-forward="false" selection-start-line="47" selection-start-column="8" selection-end-line="47" selection-end-column="8" />
+          <folding>
+            <marker date="1547437462703" expanded="true" signature="823:827" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/classisc/classisc.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="7" column="12" lean-forward="false" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+          <folding>
+            <marker date="1547458159649" expanded="true" signature="37:79" ph="..." />
           </folding>
         </state>
       </provider>
@@ -322,16 +370,18 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="726">
           <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1547600264713" expanded="true" signature="2321:2325" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/classisc/classisc.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="7" column="12" lean-forward="false" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+        <state relative-caret-position="154">
+          <caret line="8" column="12" lean-forward="false" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
           <folding>
-            <element signature="e#30#80#0" expanded="true" />
+            <marker date="1547458159649" expanded="true" signature="37:79" ph="..." />
           </folding>
         </state>
       </provider>
@@ -346,16 +396,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/book-detail/book-detail.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="37" column="7" lean-forward="false" selection-start-line="37" selection-start-column="7" selection-end-line="37" selection-end-column="7" />
-          <folding />
+        <state relative-caret-position="990">
+          <caret line="45" column="7" lean-forward="false" selection-start-line="45" selection-start-column="7" selection-end-line="45" selection-end-column="7" />
+          <folding>
+            <marker date="1547600264713" expanded="true" signature="2321:2325" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/book-detail/book-detail.wxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1650">
-          <caret line="77" column="3" lean-forward="false" selection-start-line="77" selection-start-column="3" selection-end-line="77" selection-end-column="3" />
+        <state relative-caret-position="1694">
+          <caret line="81" column="3" lean-forward="false" selection-start-line="81" selection-start-column="3" selection-end-line="81" selection-end-column="3" />
           <folding />
         </state>
       </provider>
@@ -373,7 +425,7 @@
         <state relative-caret-position="704">
           <caret line="47" column="8" lean-forward="false" selection-start-line="47" selection-start-column="8" selection-end-line="47" selection-end-column="8" />
           <folding>
-            <marker date="1547005439098" expanded="true" signature="800:804" ph="{...}" />
+            <marker date="1547437462703" expanded="true" signature="823:827" ph="{...}" />
           </folding>
         </state>
       </provider>

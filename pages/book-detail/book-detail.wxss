@@ -75,7 +75,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 140rpx;
+  padding-bottom: 40rpx;
 }
 .book-message .content text{
   color: rgb(46, 46, 46);
@@ -104,10 +104,11 @@
 }
 .footer-container{
   width: 100%;
-  position: fixed;
+  position: relative;
   background: white;
   z-index: 999;
-  bottom: 0;
+  margin-bottom: 110rpx;
+  /* bottom: 0; */
 }
 .footer-container .content{
   width: 690rpx;
@@ -126,10 +127,17 @@
 }
 .footer-container .tag-wrap{
    display: flex;
-   flex-direction:row;
-  flex-wrap: wrap;
+   flex-direction:column;
+   flex-wrap: wrap;
 
 }
+.footer-container .tag-content{
+    display: flex;
+   flex-direction:row;
+   flex-wrap: wrap;
+
+}
+
 .footer-container .content input{
    text-align: center;
    background: rgb(247, 247, 247);
@@ -166,4 +174,53 @@
  .share-img{
   width: 28rpx;
   height: 28rpx;
+}
+.cart-wrap {
+  padding: 10rpx;
+  position:fixed;
+  width: 100%;
+  z-index: 999;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow:1rpx 1rpx 2rpx 1rpx;
+  background: white;
+  
+
+}
+.cart-line{
+  width: 2rpx;
+  height:70rpx;
+  background: #515151;
+}
+.cart-wrap image{
+  width: 80rpx;
+  height:80rpx;
+
+}
+.cart-btn{
+  background: rgb(0, 128, 111);
+  padding: 20rpx 40rpx;
+  color: white;
+  border-radius: 20rpx;
+}
+.tag{
+  /* width: 120rpx; */
+  text-align: center;
+  margin-left:10rpx;
+  padding:10rpx 10rpx;
+  background: rgb(247, 247, 247);
+  margin-bottom: 20rpx;
+}
+.cart-wrap .weui-cell__hd{
+  position: relative;
+  margin-right: 10px;
+}
+
+.cart-wrap .weui-badge{
+position: absolute;
+top: -.0em;
+right: -.4em;
 }

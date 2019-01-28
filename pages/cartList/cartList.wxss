@@ -1,0 +1,34 @@
+/* pages/cartList/cartList.wxss */
+.contanier{
+  width:100%;
+}
+.footer{
+  position: fixed;
+  bottom:0;
+  width: 100%;
+  margin: 0 auto;
+  /* padding: 50rpx 0; */
+  background: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  box-shadow: 1px 1px 1px 1px;
+  justify-content: space-between;
+}
+.footer .all{
+  background: red;
+  color: white;
+  padding: 30rpx 100rpx;
+}
+.check-all{
+  margin-left:10rpx;
+}
+ 
+.touch-move-active .content, .touch-move-active .del {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+.cart-wrap{
+  margin-bottom:100rpx;
+}
+ 

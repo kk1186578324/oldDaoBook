@@ -8,7 +8,7 @@
     <text class='author'>{{item.author}}</text>
     <view class='like'>
     <text class="like-text">{{item.fav_nums}}.喜欢</text>
-    <text class="like-content">68.短评</text>
+    <text class="like-content">{{'¥'+item.price}}</text>
     </view>
   </view>
  </view>

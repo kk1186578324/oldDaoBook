@@ -4,7 +4,7 @@
 <view class="container">
     <view class='line'></view>
    <view class='header'>
-   <image src="images/books1.jpg"></image>
+   <image src="{{bathUrl+books.image}}"></image>
    <text class='title'>{{books.title}}</text>
    <text class='author'>{{books.author}}</text>
    </view>
@@ -14,7 +14,7 @@
     <view class='content'>
     <block  wx:for="{{util.limit(comments,3)}}" wx:key="{{index}}"> 
     <v-tag  tagData="{{item.content}}" tag-class="tag">
-    <text  class="give" slot="after">1</text>
+    <text  class="give" slot="after"></text>
     </v-tag>
     </block>
     </view>
@@ -48,24 +48,39 @@
     <view class="content" wx:if="{{isWrite}}">
       <text class='title'>点击短评+1</text>
       <view class="tag-wrap" >
+       <view class="tag-content">
         <block  wx:for="{{util.limit(comments,3)}}" wx:key="{{index}}"> 
           <v-tag  tagData="{{item.content}}">
-          <text  class="give" slot="after">1</text>
+          <text  class="give" slot="after"></text>
           </v-tag>
         </block>
+        </view>
         <input bindblur='blurInput' focus="{{isWrite}}" bindconfirm='initConfirm'  type="text"/>
       </view> 
     </view>
    <view class='footer'  wx:if="{{!isWrite}}">
     <view class="fake" bindtap='initWrite'>请输入短评~</view>
- <v-like wx:if="{{isStatus}}" likeData = "{{likeData}}" />
+
+ <v-like  bindlike = "onLike" like="{{like.like_status}}" count = "{{like.fav_nums}}" />
    <v-button bind:getuserinfo="onGetUserInfo" open-type='share'>
    <image class='share-img' slot="img" src="/image/share/share.png"></image>
  </v-button>
    </view>
-
    </view>
+   <view class='cart-wrap'>
+   <navigator url="/pages/book-index/index" open-type="switchTab" >
+     <image src="images/home.png"></image>
+   </navigator>  
+   <view class='cart-line'></view>
+      <navigator url="/pages/cartList/cartList" open-type="switchTab" >
+      <view class="weui-cell__hd">
+      <image src="images/cart.png"></image>
+      <view class="weui-badge">{{cartsCount}}</view>
+      </view>
+  </navigator>  
 
+   <view class='cart-btn' bindtap='inputCart'>加入购物车</view>
+   </view>
 </view>
 
 <!-- 遮罩层 -->
@@ -74,6 +89,7 @@
 
 <wxs module="util">
   var limit = function(array, length) {
+  console.log(array)
     return array.slice(0, length)
   }
   module.exports = {

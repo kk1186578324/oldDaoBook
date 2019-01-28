@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "v-orderlist": "/components/order_list/index"
+  }
+}

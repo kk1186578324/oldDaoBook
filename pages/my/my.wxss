@@ -123,3 +123,14 @@
   border-radius: 120rpx;
 
 }
+.call-me{
+  overflow: hidden;
+  font-size:32rpx;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  border:none!important; 
+  padding: 0!important;
+  background: white;
+}
+button::after{ border: none; }

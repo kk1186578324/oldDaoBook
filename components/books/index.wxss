@@ -24,8 +24,12 @@
   font-size:24rpx; 
   color: rgb(138, 138, 138)
 }
+.like-text{
+  color: rgb(240, 9, 240)
+}
 .like-content{
   margin-left:10rpx;
+  color: rgb(255, 60, 0);
 }
 .books-container image{
   width:240rpx;

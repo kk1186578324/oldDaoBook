@@ -19,7 +19,7 @@
  <view class='about'>
  <view class='about-me'>
  <image src="images/aboutme.png"></image>
-   <text>关于我们</text>
+ <button open-type="contact" class="call-me">联系我</button>
  </view>
   <view class='books-me'>
    <text>17</text>
@@ -33,28 +33,28 @@
  </view>
 <view class='container'>
  
-  <view class="books-container" wx:for="{{classic}}" wx:key="{{key}}">
-    <view class='movie-like'>
-    <wxs module = "movieName">
-     var getName = function(type){
-      switch(type){
-        case 100:
-         return "电影"
-         case 200:
-         return "音乐"
-         case 300:
-         return "诗句"
-         defult
-         return ""
-       }
-     }
-     module.exports.getName = getName
-    </wxs>
+  <view class="books-container" wx:for="{{classic}}" wx:if="{{!!item.type}}" wx:key="{{key}}">
+    <view class='movie-like' >
+      <wxs module = "movieName">
+      var getName = function(type){
+        switch(type){
+          case 100:
+          return "电影"
+          case 200:
+          return "音乐"
+          case 300:
+          return "诗句"
+          defult
+          return ""
+        }
+      }
+      module.exports.getName = getName
+      </wxs>
     <text class='movie-title'>{{movieName.getName(item.type)}}</text>
     <v-like bindlike = "onLike"  data-id="{{item.id}}" readonly="{{true}}"  data-type="{{item.type}}" like="{{item.like_status}}" count = "{{item.fav_nums}}"/>
     </view>
     <image class="{{item.type==200?'music':null}}" src="{{bathUrl+item.image}}"></image>
-    <text class='title'>{{item.content}}</text>
+    <text class='title'>{{item.title}}</text>
   </view>
 </view>
 </view>

@@ -1,0 +1,10 @@
+{
+  "component": true,
+  "usingComponents": {
+    "v-search": "/components/searchbar/searchbar",
+    "v-banner": "/components/banner/banner",
+    "v-tag": "/components/tags/index",
+    "v-books": "/components/books/index",
+    "v-loading": "/components/loading/index"
+  }
+}

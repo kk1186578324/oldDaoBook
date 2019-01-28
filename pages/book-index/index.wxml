@@ -1,0 +1,45 @@
+<!--pages/book-index/index.wxml-->
+<!-- <text>pages/book-index/index.wxml</text> -->
+<view class='index-container'>
+<view class='search-container'>
+<image src="images/search.png"></image>
+<text  bindtap='initSearch'> 搜索图书名称</text>
+</view>
+<view class='banner-container'>
+<v-banner imgUrls="{{bannerList}}"></v-banner>
+</view>
+<view class="listcontainer">
+  <view class='v1'>推荐分类</view>
+  <view class='v2'>全部</view>
+</view>
+
+<view class='tag-wrap'>
+  <block  wx:for="{{util.limit(tagComments,8)}}" wx:key="{{index}}"> 
+  <v-tag  tagData="{{item.name}}" bindsearch ="onClassify" tag-class="tag">
+  <text  class="give" slot="after"></text>
+  </v-tag>
+  </block>
+</view>
+<view class="listcontainer">
+  <view class='v1'>最新上架</view>
+</view>
+ <v-books books = "{{books}}" />
+
+ 
+
+</view>
+
+<view class='loading-wrap'>
+<v-loading class="loading-center" wx:if="{{hidden}}"/>
+<v-loading class="loading" wx:if="{{hidden}}" />
+</view>
+
+
+<wxs module="util">
+  var limit = function(array, length) {
+    return array.slice(0, length)
+  }
+  module.exports = {
+    limit: limit
+  }
+</wxs>

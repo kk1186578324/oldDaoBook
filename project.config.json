@@ -35,7 +35,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 2,
+			"current": 3,
 			"list": [
 				{
 					"id": -1,
@@ -52,7 +52,13 @@
 				{
 					"id": -1,
 					"name": "书单",
-					"pathName": "pages/book/book"
+					"pathName": "pages/book/book",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "购物车",
+					"pathName": "pages/cartList/cartList"
 				}
 			]
 		}

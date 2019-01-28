@@ -4,7 +4,7 @@ const tips = {
     1005:"xxxx"
 
 }
-const _urlArr = ["/like/add", "/comment/add"]
+const _urlArr = ["/like/add", "/comment/add", "/like/book", "/cart/getOne", "/cart/add", "/cart/list"]
 
 class HTTP{
     request({url,data={},method="get"}){
@@ -15,14 +15,10 @@ class HTTP{
       }
 
   _request(url, resolve, reject,data = {}, method = "get"){   
-    const token = wx.getStorageSync("token")
-
-    console.log(token)
-    console.log(url)
+    const UserId = wx.getStorageSync("UserId")
     if (url != "/user/login"){
-      console.log(_urlArr.includes(url))
       if (_urlArr.includes(url)) {
-        if (!token) {
+        if (!UserId) {
           wx.showModal({
             title: '提示',
             content: '请先授权登录',
@@ -45,7 +41,8 @@ class HTTP{
       url: config.api_base_url+url,
       data,
       header: {
-        'content-type':'application/json'
+        'content-type':'application/json',
+        'Authorization': UserId
       },
       method,
       success: function (res) {
@@ -82,4 +79,4 @@ class HTTP{
 
 }
 
-export { HTTP }
+export { HTTP}

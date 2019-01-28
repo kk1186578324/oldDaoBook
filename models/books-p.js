@@ -1,9 +1,9 @@
 import { HTTP } from '../util/http-p.js'
 class BooksModelP extends HTTP {
-  getBooks(page, pageSize) {
+  getBooks({ page, pageSize, classify, bookName}) {
    return this.request({
       url: '/books/list',
-      data: { page, pageSize },
+     data: { page, pageSize, classify, bookName},
       method: 'post'
     })
   }
@@ -20,10 +20,24 @@ class BooksModelP extends HTTP {
       method: 'post'
     })
   }
+  getComment(book_id) {
+    return this.request({
+      url: '/comment/list',
+      data: { book_id },
+      method: 'post'
+    })
+  }
   booksSearch(bookName) {
     return this.request({
       url: '/books/search',
       data: {bookName},
+      method: 'post'
+    })
+  }
+ classifySearch(classify) {
+    return this.request({
+      url: '/books/classify',
+      data: { classify },
       method: 'post'
     })
   }

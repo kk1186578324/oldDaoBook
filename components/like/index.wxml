@@ -1,8 +1,8 @@
 <!--components/like/index.wxml-->
 <!-- <text>components/like/index.wxml</text> -->
 <view  class="container" bindtap="onLike">
-<image src="images/like{{like.like_status}}.png"></image>
-<text>{{like.fav_nums}}</text>
+<image src="images/like{{like}}.png"></image>
+<text>{{count}}</text>
 </view>
 
 

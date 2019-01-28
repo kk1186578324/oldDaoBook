@@ -1,0 +1,152 @@
+/* pages/cartList/cartList.wxss */
+.contanier{
+  width:100%;
+}
+.footer{
+  position: fixed;
+  bottom:0;
+  width: 100%;
+  margin: 0 auto;
+  /* padding: 50rpx 0; */
+  background: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  box-shadow: 1px 1px 1px 1px;
+  justify-content: space-between;
+}
+.footer .all{
+  background: red;
+  color: white;
+  padding: 30rpx 100rpx;
+}
+.check-all{
+  margin-left:10rpx;
+}
+ 
+.touch-move-active .content, .touch-move-active .del {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+.cart-wrap{
+  margin-bottom:100rpx;
+}
+ /* components/order_list/index.wxss */
+/* @import "../../weui.wxss"; */
+.contaier{
+  width: 100%;
+  padding:20rpx 0; 
+ border-bottom:1px solid #999;
+}
+.order-wrap{
+  width: 690rpx;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+}
+.order-wrap .desc{
+  display: flex;
+  flex-direction: column;
+  margin-left:20rpx;
+
+}
+.order-wrap .img{
+  width:160rpx;
+  height: 160rpx;
+}
+.add{
+  font-size: 30rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 200rpx;
+  height: 50rpx;
+  border: 1px solid #777;
+}
+.add text{
+  font-size: 60rpx;
+  line-height: 50rpx;
+  width: 60rpx;
+  text-align: center;
+  
+}
+.add .num{
+  width: 80rpx;
+  text-align: center;
+  border-left:1px solid #777;
+  border-right:1px solid #777;
+  font-size:37rpx;
+
+}
+.image-wrap{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.desc text{
+  width: 200rpx;
+}
+.price{
+  color: red;
+} 
+
+
+/* 向左滑动实现删除操作 */
+.touch-item {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1rpx solid #ccc;
+  width: 100%;
+  overflow: hidden;
+}
+ 
+.content {
+  width: 100%;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+  padding-left: 20rpx;
+  line-height: 50rpx;
+  margin-right: 0;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  -webkit-transform: translateX(180rpx);
+  transform: translateX(180rpx);
+  margin-left: -180rpx;
+}
+ 
+.del {
+  background-color: orangered;
+  width: 180rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  -webkit-transform: translateX(180rpx);
+  transform: translateX(180rpx);
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+ 
+.touch-move-active .content, .touch-move-active .del {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+ 
+.row {
+  display: flex;
+  flex-direction: row;
+}
+ 
+.column {
+  display: flex;
+  flex-direction: column;
+}
+ 
+.full_width {
+  width: 100%;
+}

@@ -2,6 +2,7 @@
 import { ClassicModel } from '../../models/classic-p'
 import { LikeModel } from '../../models/like-p'
 import {UserModel } from '../../models/userLogin'
+import { config } from '../../config.js'
 var likeModel = new LikeModel();
 var classicModel = new ClassicModel();
 var userModel = new UserModel();
@@ -18,11 +19,18 @@ Page({
    */
   data: {
     classic:[],
-    bathUrl: "http://192.168.2.51:3000/img/",
+    bathUrl: config.img_url,
     pageSize: 1000,
     page: 1,
+    likeData:{},
+    isStatus:false,
     isLogin:false,
     userInfo:{}
+  },
+
+  onShow(e){
+    console.log(e)
+
   },
    onLoad(){
      // 查看是否授权
@@ -50,9 +58,10 @@ Page({
    },
   initData(){
 
-    classicModel.getLatest().then((res) => {
+    likeModel.likeAllList().then((res) => {
       this.setData({
-        classic: res.content
+        classic: res.content,
+
       })
     })
 
@@ -73,7 +82,7 @@ Page({
       })
       console.log(this.data.userInfo)
       this.initLogin()
-      this.initData();
+  
     }
   },
   //初始化登录状态
@@ -85,7 +94,8 @@ Page({
           console.log(res)
           const result = userModel.userLogin(res.code, this.data.userInfo);
           result.then(res=>{
-            wx.setStorageSync("token", res.openid)
+            wx.setStorageSync("UserId", res.openid)
+            this.initData();
           })
           // 发起网络请求
           // wx.request({
@@ -94,6 +104,11 @@ Page({
           //     code: res.code
           //   }
           // })
+          let pages = getCurrentPages(); 
+          console.log(pages)
+          wx.navigateBack({
+            delta: 2
+          })
         } else {
           console.log('登录失败！' + res.errMsg)
         }

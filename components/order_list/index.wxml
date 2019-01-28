@@ -1,0 +1,26 @@
+
+<view class="touch-item {{cart.isTouchMove ? 'touch-move-active' : ''}}" data-index="{{index}}" >
+  <view class='content'  data-index="{{index}}">
+    <view class='column'>
+      <view class='row full_width'>
+        <view class='order-wrap'>
+          <view class='image-wrap'>
+            <checkbox checked="{{checked}}" hidden='{{hidChecked}}' data-checked="{{checked}}"  bindtap="checkboxChange" ></checkbox>
+            <image class='img' src='{{bathUrl+cart.image}}'></image>
+            <view class='desc'>
+              <text>{{cart.title}}</text>
+              <text class='price'>{{"价格：¥"+cart.price}}</text>
+            </view>
+          </view>
+          <view class='add'>
+            <text catchtap='reduce'>-</text>
+            <text class='num'>{{cart.count}}</text>
+            <text catchtap='add'>+</text>
+          </view>
+        </view>
+      </view>
+
+    </view>
+  </view>
+    <view class="del" catchtap="del"   data-index="{{index}}">删除</view>
+</view>

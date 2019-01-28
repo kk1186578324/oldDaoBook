@@ -1,6 +1,6 @@
 <!--components/searchList/index.wxml-->
 <!-- <text>components/searchList/index.wxml</text> -->
-<view class="search-list">
+<view class="search-list" bindtap='detail' data-id="{{searchData.id}}" >
    <image src="{{bathUrl+ searchData.image}}"></image>
    <view class="search-content">
      <text class='title'>{{searchData.title}}</text>

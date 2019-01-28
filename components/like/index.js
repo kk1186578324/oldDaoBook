@@ -11,9 +11,12 @@ Component({
       type:Boolean,
       value:false
     },
-    likeData:{
-      type:Object,
-      value:{}
+
+    like: {
+      type: Number
+    },
+    count: {
+      type: Number
     }
 
   },
@@ -27,85 +30,22 @@ Component({
     count1:"",
 
   },
-  ready(){
-    // this.setData({
-    //   count1
-    // })
-    this.initLike()
-  },
+
 
 
   /**
    * 组件的方法列表
    */
   methods: {
-    //初始化喜欢
-    initLike() {
-      let result;
-      console.log(this.properties.likeData)
-      // if (!this.properties.likeData.art_id){
-      //       return;
-      // }
-      if (this.properties.likeData.type){
-         result = likeModel.likeList(this.properties.likeData)
-      }else{
-        result = likeModel.likeBookList(this.properties.likeData)
-      }
- 
-      result.then((res) => {
-        this.setData({
-          like: res.content
-        })
-      })
-    },
     onLike(){
       if (this.properties.readonly){
         return;
       }
-      var behavior = {}
-      behavior.art_id = this.properties.likeData.art_id
-      this.data.like.like_status ? behavior.behavior = "cancle" : behavior.behavior = "like"
-      let result;
-      if (this.properties.likeData.type){
-        behavior.type = this.properties.likeData.type
-         result = likeModel.like(behavior)
-      }else{
-        result = likeModel.likeBook(behavior);
-      }
-        
-        let like = this.data.like;
-        result.then(res => {
-          if (res.success) {
-            if (!like.like_status) {
-              like.like_status = 1;
-              like.fav_nums++
-            } else {
-              like.like_status = 0
-              like.fav_nums--
-            }
-            this.setData({
-              like
-            })
-          }
-        })
-      
+      console.log(this.data.like)
+      var behavior = this.data.like ? "cancel" : "like";
+      //激活自定义事件
+      this.triggerEvent("like", { behavior }, {})
 
-
-
-
-
-
-
-
-
-      // var count1 = this.initCount()
-      // this.setData({
-      //   count1: count1
-      // })
-      console.log(this.properties.like)
- 
-  //激活自定义事件
-      // this.triggerEvent("like", { behavior},{})
     },
 
 
