@@ -1,0 +1,43 @@
+<!--pages/address/address.wxml-->
+
+<view class='contanier'>
+  <view class="weui-cells weui-cells_after-title ">
+    <radio-group class="item-right radio-group">
+      <block wx:for="{{address}}" wx:key="{{key}}">
+        <view class="weui-cell">
+          <view class="weui-cell__hd">
+          </view>
+          <view class="weui-cell__bd userName">
+            <text class='name'>{{item.name}}</text>
+            <text>{{item.address+item.address_detail}}</text>
+          </view>
+          <view class="weui-cell__ft">{{item.phone}}</view>
+        </view>
+        <view class="weui-cell">
+          <view class="weui-cell__hd">
+          </view>
+          <view class="weui-cell__bd">
+            <view class='item ft-30 h90 flex flex-vc bd-bt-f4f pd-lt20 pd-rt20'>
+
+              <label class="radio"   bindtap='changeDefult'  data-id="{{item._id}}"  data-index="{{index}}">
+                <radio value="{{item.name}}"   data-id="{{item._id}}" checked="{{item.isDefult}}" /> 设为默认地址
+              </label>
+
+            </view>
+          </view>
+          <view class="weui-cell__ft option-cell">
+            <view  bindtap='onUpdate' data-id="{{item._id}}" data-index="{{index}}">编辑</view>
+            <view bindtap='onDelete' data-id="{{item._id}}" data-index="{{index}}" >删除</view>
+          </view>
+        </view>
+      </block>
+    </radio-group>
+  </view>
+</view>
+<navigator url='/pages/add-address/index'>
+  <view class='footer'>
+
+    新增地址
+
+  </view>
+</navigator>

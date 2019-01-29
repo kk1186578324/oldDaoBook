@@ -1,32 +1,58 @@
 <!--pages/place/index.wxml-->
 <!-- <text>pages/place/index.wxml</text> -->
 <view class="container">
-<view class="weui-cells weui-cells_after-title bg">
-  <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-      <view class="weui-cell__bd">请选择收货地址</view>
+  <view class="weui-cells weui-cells_after-title bg address-contarier">
+    <navigator url="/pages/address/address" class="weui-cell weui-cell_access addres-nav"  hover-class="weui-cell_active">
+      <view class='address-wrap' wx:if="{{addStatus}}">
+        <view class="address-head">
+          <text>{{address.name}}</text>
+          <text>{{address.phone}}</text>
+        </view>
+        <text>{{address.address+address.address_detail}}</text>
+      </view>
+      <view class="weui-cell__bd"  wx:if="{{!addStatus}}">请选择收货地址</view>
       <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-  </navigator>
+    </navigator>
+
+  </view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell">
+      <view class="weui-cell__bd msg-title">商品信息</view>
+    </view>
+  </view>
+  <view class="cart-wrap">
+    <block wx:for="{{carts}}" wx:key="{{index}}">
+      <v-orderlist hidChecked="{{'false'}}" cart="{{item}}" index="{{index}}" data-index="{{index}}" binddelData="delData" allChecked="{{allChecked}}" bindoptionCart="optionCart" />
+    </block>
+  </view>
+
+  <view class="weui-cells weui-cells_after-title">
+    <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+      <view class="weui-cell__bd">优惠券</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access">暂无优惠券</view>
+    </navigator>
+    <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+      <view class="weui-cell__bd">配送方式</view>
+      
+      <view class="weui-cell__hd" style="width: 105px">
+          <picker bindchange="bindCountryCodeChange" value="{{countryCodeIndex}}" range="{{countryCodes}}">
+              <view class="weui-select ">{{countryCodes[countryCodeIndex]}}</view>
+          </picker>
+      </view>
+    </navigator>
+  </view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell">
+      <view class="weui-cell__bd">运费</view>
+      <view class="weui-cell__ft fear">{{"¥"+fare}}</view>
+    </view>
+  </view>
+  <view class="footer">
+    <view class='all'>合计：{{allPrice}}</view>
+    <view class="pay" bindtap='settlement'>支付</view>
+  </view>
+
+
+
 
 </view>
-  <view class="weui-cells weui-cells_after-title">
-            <view class="weui-cell">
-                <view class="weui-cell__bd msg-title">商品信息</view>
-            </view>
-   </view> 
-   <view class="cart-wrap">
-
-  <block wx:for="{{carts}}" wx:key="{{index}}" >
-  <v-orderlist cart="{{item}}" carts="{{carts}}" index="{{index}}" data-index="{{index}}" allPrice = "{{allPrice}}" bindaddPrice="addPrice"  bindreducePrice="reducePrice" binddelData="delData" allChecked="{{allChecked}}" bindtouchstart="touchstart" bindtouchmove="touchmove" hidChecked="{{true}}"/>
-  </block>
-  </view> 
-  <view class="footer">
-  <view class='check-all'>
-  <checkbox bindtap='allCheck' checked='{{util.checked(carts)}}'></checkbox>
-  <text>全选</text>
-  </view>
-  <view>合计：{{allPrice}}</view>
-  <view class="all" bindtap='settlement'>去结算</view>
-  </view>
- </view>
-
-   

@@ -5,16 +5,16 @@
       <view class='row full_width'>
         <view class='order-wrap'>
           <view class='image-wrap'>
-            <checkbox checked="{{checked}}" hidden='{{hidChecked}}' data-checked="{{checked}}"  bindtap="checkboxChange" ></checkbox>
-            <image class='img' src='{{bathUrl+cart.image}}'></image>
+            <checkbox checked="{{cartData.isChecked}}" hidden='{{hidChecked}}' data-checked="{{cartData.isChecked}}"  bindtap="checkboxChange" ></checkbox>
+            <image class='img' src='{{bathUrl+cartData.image}}'></image>
             <view class='desc'>
-              <text>{{cart.title}}</text>
-              <text class='price'>{{"价格：¥"+cart.price}}</text>
+              <text>{{cartData.title}}</text>
+              <text class='price'>{{"价格：¥"+cartData.price}}</text>
             </view>
           </view>
           <view class='add'>
             <text catchtap='reduce'>-</text>
-            <text class='num'>{{cart.count}}</text>
+            <text class='num'>{{cartData.count}}</text>
             <text catchtap='add'>+</text>
           </view>
         </view>

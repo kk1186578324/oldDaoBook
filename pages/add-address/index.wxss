@@ -1,0 +1,25 @@
+/* pages/add-address/index.wxss */
+.location{
+  width: 60rpx;
+  height:60rpx;
+  
+}
+.location-wrap{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.location-wrap .weui-input{
+  width: 440rpx;
+}
+.locationbtn{
+  width: 70rpx;
+  text-align: center;
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  border: none!important;
+  background: white;
+}
+.locationbtn::after{ border: none; }

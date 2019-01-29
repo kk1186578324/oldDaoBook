@@ -21,8 +21,7 @@ Page({
     carts: [],
     item: {},
     allPrice: 0,
-    // allChecked: false
-
+    allChecked: true
   },
 
   /**
@@ -35,61 +34,57 @@ Page({
     const result = cartModel.listCart()
     let allPrice = 0;
     result.then((res) => {
-      var status = false;
-      res.content.forEach(function(value, index) {
-        value.serial = index;
-        if (!value.isChecked) {
-          status = true
-        } else {
-          allPrice += value.allPrice
-        }
-      })
       this.setData({
         carts: res.content,
-        allPrice: allPrice.toFixed(2)
       })
+      this.computeAllprice()
     })
   },
-  reducePrice(e) {
-
-    //判断是否为加减option
-    if (e.detail.option && !e.detail.status) {
-      return;
-    }
-    // var count = e.detail.count - 1;
-    const result = cartModel.checkCart(e.detail.id, e.detail.status, e.detail.count);
-    result.then((res) => {
-      this.changeChecked(e.detail.id, e.detail.status, e.detail.option, e.detail.count)
-      this.setData({
-        allPrice: Math.abs((this.data.allPrice - e.detail.price)).toFixed(2)
-      })
-    })
+  optionCart(e) {
+    this.updateCarts(e.detail)
   },
-  addPrice(e) {
-    //判断是否为加减option
-    if (e.detail.option && !e.detail.status) {
-      return;
-    }
-  const result = cartModel.checkCart(e.detail.id, e.detail.status, e.detail.count);
-    result.then((res) => {
-      this.changeChecked(e.detail.id, e.detail.status, e.detail.option,e.detail.count)
-      this.setData({
-        allPrice: ((+this.data.allPrice) + (+e.detail.price)).toFixed(2)
-      })
-    })
-  },
-
   //改变carts状态
-  changeChecked(id, status, option, count){
-   var carts = this.data.carts;
-    carts.forEach((value,index)=>{
-      if(value._id==id){
-        value.isChecked = status;
-        value.count = count
+  changeChecked(cartList) {
+    var carts = this.data.carts;
+    carts.forEach((value, index) => {
+      if (value._id == cartList._id) {
+        carts[index] = cartList;
       }
     })
     this.setData({
       carts: carts
+    })
+    this.computeAllprice();
+  },
+  //
+  updateCarts(cart) {
+    const result = cartModel.updateCart(cart)
+    result.then((res) => {
+      this.changeChecked(cart)
+    })
+  },
+
+  computeAllprice() {
+    var allPrice = 0,
+      status = false;
+    if (this.data.carts.length) {
+      this.data.carts.forEach((value, index) => {
+        if (value.isChecked) {
+          allPrice += value.count * value.price;
+        } else {
+          status = true
+        }
+      })
+      if (status) {
+        this.data.allChecked = false
+      } else {
+        this.data.allChecked = true
+      }
+    } else {
+      this.data.allChecked = false
+    }
+    this.setData({
+      allPrice: allPrice.toFixed(2)
     })
   },
   //删除数据
@@ -98,24 +93,35 @@ Page({
     carts.splice(e.detail.index, 1)
     const result = cartModel.delCart(e.detail.id);
     result.then((res) => {
-      if (e.detail.status) {
-        this.setData({
-          allPrice: Math.abs((this.data.allPrice - e.detail.price)).toFixed(2)
-        })
-      }
       this.setData({
         carts
       })
+      this.computeAllprice()
     })
   },
 
+  //全选
+  allCheck(e) {
+    //处理全选逻辑
+    if (!this.data.allChecked) {
+      for (let i = 0; i < this.data.carts.length; i++) {
+        this.data.carts[i].isChecked = true;
+        this.data.allChecked = false;
+      }
+    } else {
+      for (let i = 0; i < this.data.carts.length; i++) {
+        this.data.carts[i].isChecked = false;
+      }
+    }
+    this.setData({
+      carts: this.data.carts,
+    })
+    this.computeAllprice();
+  },
   //手指触摸动作开始 记录起点X坐标
   touchstart(e) {
     //开始触摸时 重置所有删除
     let data = touch._touchstart(e, this.data.carts)
-    // this.setData({
-    //   carts: data
-    // })
   },
   //滑动事件处理
   touchmove(e) {
@@ -124,55 +130,6 @@ Page({
       carts: data
     })
   },
-  //全选
-  allCheck(e) {
-
-    //处理全选逻辑
-    let i = 0;
-    let allPrice = 0;
-    if (!this.data.allChecked) {
-      for (i = 0; i < this.data.carts.length; i++) {
-        this.data.carts[i].isChecked = true;
-        allPrice += this.data.carts[i].allPrice;
-      }
-    } else {
-      for (i = 0; i < this.data.carts.length; i++) {
-        this.data.carts[i].isChecked = false;
-      }
-      allPrice = 0;
-    }
-    this.setData({
-      allChecked: !this.data.allChecked,
-      carts: this.data.carts,
-      allPrice: allPrice.toFixed(2)
-    })
-
-  },
-  checkboxChange(e) {
-    console.log(e)
-
-  },
-
-
-  // //删除事件
-  // del: function (e) {
-  //   wx.showModal({
-  //     title: '提示',
-  //     content: '确认要删除此条信息么？',
-  //     success: function (res) {
-  //       if (res.confirm) {
-  //         console.log('用户点击确定')
-  //         console.log(that.data.carts)
-  //         that.data.items.splice(e.currentTarget.dataset.index, 1)
-  //         that.setData({
-  //           carts: that.data.carts
-  //         })
-  //       } else if (res.cancel) {
-  //         console.log('用户点击取消')
-  //       }
-  //     }
-  //   })
-  // },
 
   /**
    * 生命周期函数--监听页面初次渲染完成

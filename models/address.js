@@ -1,30 +1,30 @@
 import { HTTP } from '../util/http-p.js'
-class CartModel extends HTTP {
-  addCart({book_id}) {
+class AddressModel extends HTTP {
+  addAddress(paramObj) {
     return this.request({
-      url: '/cart/add',
-      data: {book_id},
+      url: '/address/add',
+      data: paramObj,
       method: 'post'
     })
   }
-  listCart() {
+  listAddress(page,pageSize) {
     return this.request({
-      url: '/cart/list',
-      data: {},
+      url: '/address/list',
+      data: { page, pageSize},
       method: 'post'
     })
   }
-  delCart(id) {
+  delAddress(id) {
     return this.request({
-      url: '/cart/del',
+      url: '/address/del',
       method: 'post',
-      data: {id}
+      data: { id }
     })
   }
   updateCart(carts) {
     return this.request({
       url: '/cart/update',
-      data: {carts},
+      data: { carts },
       method: 'post'
     })
   }
@@ -37,4 +37,4 @@ class CartModel extends HTTP {
   }
 }
 
-export { CartModel } 
+export { AddressModel } 

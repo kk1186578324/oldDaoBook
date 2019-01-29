@@ -3,7 +3,7 @@
 
   <block wx:for="{{carts}}" wx:key="{{index}}" >
 
-  <v-orderlist cart="{{item}}" carts="{{carts}}" index="{{index}}" data-index="{{index}}" allPrice = "{{allPrice}}" bindaddPrice="addPrice"  bindreducePrice="reducePrice" binddelData="delData" allChecked="{{allChecked}}" bindtouchstart="touchstart" bindtouchmove="touchmove"/>
+  <v-orderlist cart="{{item}}" index="{{index}}" data-index="{{index}}" allPrice = "{{allPrice}}"   binddelData="delData" allChecked="{{allChecked}}" bindtouchstart="touchstart" bindtouchmove="touchmove" bindoptionCart="optionCart"/>
   </block>
 
   </view>
@@ -13,13 +13,16 @@
   <text>全选</text>
   </view>
   <view>合计：{{allPrice}}</view>
+  <navigator url='/pages/address/address'>
   <view class="all" bindtap='settlement'>去结算</view>
+  </navigator>
   </view>
 </view>
 <wxs module="util">
 var checked = function(array) {
   var allChecked=false,status = false;
-  for(var i = 0;i<array.length;i++){
+  if(array.length){
+    for(var i = 0;i<array.length;i++){
      if (!array[i].isChecked) {
           status = true
         } 
@@ -29,6 +32,9 @@ var checked = function(array) {
     } else {
         allChecked= true
     }
+  }else{
+    allChecked= false
+  }
     return allChecked
   }
   module.exports = {

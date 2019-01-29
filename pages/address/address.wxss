@@ -1,0 +1,58 @@
+/* pages/address/address.wxss */
+
+.userName{
+  display: flex;
+  flex-direction: column;
+
+}
+.userName .name{
+  font-weight: 700;
+}
+/* 自定义 radio 样式 */
+radio{
+    width: 38rpx;
+}
+ 
+radio .wx-radio-input{
+    border-radius: 50%; 
+    width: 28rpx;
+    height: 28rpx;
+}
+ 
+/* 选中后的样式 （可根据设计稿需求自己修改） */
+radio .wx-radio-input.wx-radio-input-checked::before{
+    border-radius: 50%;
+    width: 44rpx; 
+    height: 44rpx;
+    line-height: 44rpx;
+    text-align: center;
+    font-size: 26rpx; /* 对勾大小 26rpx */
+    color:#fff; /* 对勾颜色 */
+    background: #2facff;
+    border-color: #2facff;
+}
+.option-cell{
+  display: flex;
+  flex-direction: row;
+}
+.option-cell view {
+  border: 1px solid #999;
+  color: #333;
+  padding: 5rpx 10rpx;
+  margin-left:20rpx;
+  border-radius: 10rpx;
+}
+.footer{
+  width: 100%;
+  position: fixed;
+  background: #2facff;
+  color: white;
+  font-size:56rpx;
+  text-align: center;
+  padding: 10rpx 0;
+  bottom:0;
+  z-index: 999；
+}
+.contanier{
+margin-bottom:100rpx;
+}

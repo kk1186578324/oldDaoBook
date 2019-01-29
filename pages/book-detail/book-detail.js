@@ -152,7 +152,7 @@ Page({
       wx.showToast({
         title: '添加成功！',
         icon: 'success',
-        duration: 3000
+        duration: 2000
       });
     })
   },

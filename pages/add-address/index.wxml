@@ -1,0 +1,57 @@
+<!--pages/add-address/index.wxml-->
+<!-- <text>pages/add-address/index.wxml</text> -->
+<view class="weui-cell weui-cell_input">
+  <view class="weui-cell__hd">
+    <view class="weui-label">收件人</view>
+  </view>
+  <view class="weui-cell__bd">
+    <input class="weui-input" bindblur="_getName" value='{{addressMsg.name}}' placeholder="收件人姓名（必填）" />
+  </view>
+</view>
+<view class="weui-cell weui-cell_input">
+  <view class="weui-cell__hd">
+    <view class="weui-label">联系电话</view>
+  </view>
+  <view class="weui-cell__bd">
+    <input class="weui-input" bindblur="_getPhone"  value='{{addressMsg.phone}}' placeholder="手机号码（必填）" />
+  </view>
+</view>
+<view class="weui-cell weui-cell_input">
+  <view class="weui-cell__hd">
+    <view class="weui-label">所在位置</view>
+  </view>
+  <view class="weui-cell__bd location-wrap">
+
+    <input class="weui-input" value='{{inputText}}' bindblur='_getMap' placeholder="请选择省市、区、县/乡镇街道（必填）" /> 
+    <button bindtap="getlocation" class='locationbtn'>   
+      <image class="location" bindtap='initMap' src='images/loaction.png'></image>
+      </button>
+
+  </view>
+
+
+</view>
+  
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+      <view class="weui-label">详细地址</view>
+    </view>
+    <view class="weui-cell__bd">
+      <input class="weui-input" bindblur="_getAddress"  value='{{addressMsg.address_detail}}' placeholder="道路、楼牌号等详细地址（必填）" />
+    </view>
+  </view>
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+      <view class="weui-label">邮编</view>
+    </view>
+    <view class="weui-cell__bd">
+      <input class="weui-input" bindblur="_getEmail"  value='{{addressMsg.email}}'  placeholder="邮政编码(选填)" />
+    </view>
+  </view>
+   <view class="weui-cell">
+     <label class="radio">
+      <checkbox value="{{item.name}}" bindtap ="_changebox" checked="{{addressMsg.isDefult}}" /> 设为默认地址
+    </label>
+    </view>
+  <button class="weui-btn" type="primary" bindtap="save">保存</button>
+  <button class="weui-btn" type="default" bindtap="cancel" plain="true">取消</button>

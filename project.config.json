@@ -35,7 +35,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 3,
+			"current": 6,
 			"list": [
 				{
 					"id": -1,
@@ -58,7 +58,26 @@
 				{
 					"id": -1,
 					"name": "购物车",
-					"pathName": "pages/cartList/cartList"
+					"pathName": "pages/cartList/cartList",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "首页",
+					"pathName": "pages/book-index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "首页",
+					"pathName": "pages/address/address",
+					"query": ""
+				},
+				{
+					"id": 6,
+					"name": "支付",
+					"pathName": "pages/place/index",
+					"query": ""
 				}
 			]
 		}

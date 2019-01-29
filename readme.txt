@@ -52,3 +52,4 @@ UserIdUserId/* pages/classisc/classisc.wxss */
 
 appID:wx18939f7ccdd1676e
 appSecret:    09f81372f17516aec6831816934828a9
+mapkey:ONPBZ-T6ZKO-K6UWS-SUJIC-HYPPK-JQBJO
